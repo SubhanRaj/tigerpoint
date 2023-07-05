@@ -11,8 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+    //   Define schema, also use factories for filling 
+    //   the table with data
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+            $table->string('title', 100);
+            $table->dateTime('date_published');
+            $table->text('text_content');
+            $table->string('image', 100);
+            $table->string('author_name', 100);
+            $table->integer('author_id');
+            $table->integer('category_id');
+            $table->string('category_name', 100);
             $table->timestamps();
         });
     }

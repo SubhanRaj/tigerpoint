@@ -16,5 +16,35 @@ use App\Http\Controllers\ViewsController;
 */
 
 // Home Route
-
 Route::get('/', [ViewsController::class,'index'])-> name('home');
+
+// About Route
+Route::get('/about', [ViewsController::class,'about'])-> name('about');
+
+// display all categories by getting data from database
+Route::get('/collections', [ViewsController::class,'collections'])-> name('collections');
+
+// Display individual category page which will display all posts in that category by getting data from database
+Route::get('/collections/{id}', [ViewsController::class,'category'])-> name('category');
+
+// Route for single post with data from database using id
+Route::get('/single-post/{id}', [ViewsController::class,'singlePost'])-> name('singlePost');
+
+// Route for gallery which will display all posts as a gallery
+Route::get('/gallery', function () {
+    return view('pages.gallery');
+});
+
+
+
+// Return Privacy-policy view
+Route::get('/privacy-policy', function () {
+    return view('pages.privacy-policy');
+});
+
+
+
+// Custom 404 Page
+Route::fallback(function () {
+    return view('pages.404');
+});

@@ -4,17 +4,16 @@
             <i class="material-icons">menu</i>
         </div>
         <div class="lx-header-logo">
-            <a href="index-2.html">AXONE</a>
+            <a href="/">Tiger Point</a>
         </div>
         <div class="lx-menu">
             <div class="lx-menu-list">
                 <ul>
-                    <li><a href="index-2.html" class="active">Home</a></li>
-                    <li><a href="collection.html">Collection</a></li>
-                    <li><a href="single-post.html">Single Post</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="404.html">404 Page</a></li>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/about">About Me</a></li>
+                    <li><a href="/collections">Collection</a></li>
+                    <li><a href="/single-post">Single Post</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
                 </ul>
             </div>
         </div>

@@ -1,5 +1,5 @@
 @props(['post'])
-<div class="lx-post">
+<div class="lx-post lx-post-right">
     <div class="lx-post-img">
         <a href="/single-post/{{$post->url_slug}}"><img alt="{{$post->title}}" src="{{$post->image}}" /></a>
     </div>

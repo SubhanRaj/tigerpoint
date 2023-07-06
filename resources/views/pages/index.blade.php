@@ -12,7 +12,13 @@
 <p>No Posts Found</p>
 @endif
 @foreach($posts as $post)
-<x-post-left :post="$post" />
+<!-- Show post with odd if using lx-post, and post with even id using lx-post lx-post-right -->
+@if ($post->id % 2 == 0)
+    <x-post-right :post="$post" />
+@else
+    <x-post-left :post="$post" />
+@endif
+
 @endforeach
 
 
@@ -27,8 +33,8 @@
         </figure>
     </div>
     <div class="lx-clear-fix"></div>
-</div> -->
-<!-- <div class="lx-post lx-post-right">
+</div>
+<div class="lx-post lx-post-right">
     <div class="lx-post-img">
         <a href="single-post.html"><img alt="Alternative Title" src="images/post4.jpg" /></a>
     </div>

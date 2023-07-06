@@ -12,7 +12,7 @@
                     <li><a href="/" class="active">Home</a></li>
                     <li><a href="/about">About Me</a></li>
                     <li><a href="/collections">Collection</a></li>
-                    <li><a href="/single-post">Single Post</a></li>
+                    <li><a href="/categories">Categories</a></li>
                     <li><a href="/gallery">Gallery</a></li>
                 </ul>
             </div>

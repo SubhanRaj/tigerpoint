@@ -29,7 +29,7 @@ class ViewsController extends Controller
     }
 
     // Return a single collection view with data from database
-    public function category(Posts $category_name)
+    public function categories(Posts $category_name)
     {
         return view('pages.category',[
             'category_name' => $category_name
@@ -37,9 +37,9 @@ class ViewsController extends Controller
     }
 
     // Return a single post view with data from database
-    public function singlePost(Posts $post)
+    public function post(Posts $post)
     {
-        return view('pages.single-post',[
+        return view('pages.post',[
             'post' => $post
         ]);
     }

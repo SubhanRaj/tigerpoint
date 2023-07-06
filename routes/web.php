@@ -21,14 +21,14 @@ Route::get('/', [ViewsController::class,'index'])-> name('home');
 // About Route
 Route::get('/about', [ViewsController::class,'about'])-> name('about');
 
-// display all categories by getting data from database
+// display all collections
 Route::get('/collections', [ViewsController::class,'collections'])-> name('collections');
 
 // Display individual category page which will display all posts in that category by getting data from database
-Route::get('/collections/{category_name}', [ViewsController::class,'category'])-> name('category');
+Route::get('/categories/{category_name}', [ViewsController::class,'categories'])-> name('categories');
 
 // Route for single post with data from database using url slug
-Route::get('/single-post/{url_slug}', [ViewsController::class,'singlePost'])-> name('single-post');
+Route::get('/post/{url_slug}', [ViewsController::class,'post'])-> name('post');
 
 // Route for gallery which will display all posts as a gallery
 Route::get('/gallery', function () {

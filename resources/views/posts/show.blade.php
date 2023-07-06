@@ -1,15 +1,15 @@
 <x-layout>
     <div class="lx-single-post">
         <div class="lx-single-post-header">
-            <h1>{{$post->title}}</h1>
-            <span>April 22th, 2020</span>
+            <h1>{{ $post->title }}</h1>
+            <span class="lx-post-date">{{ $post->created_at->format('M d, Y') }}</span>
         </div>
         <div class="lx-single-post-thumbnail">
-            <img alt="{{$post->title}}" src="{{asset('images/post9.jpg')}}" />
+            <img alt="{{$post->title}}" src="{{$post->image}}" />
             <p>The harder you work for something, the greater you’ll feel when you achieve it</p>
         </div>
         <div class="lx-single-post-content">
-            <p>Personal development is a lifelong process. It is a way for people to assess their skills and qualities, consider their aims in life and set goals in order to realise and maximise their potential.</p>
+            <p>{{$post->text_content}}</p>
             <p>This <a href="#">page</a> helps you to identify the skills you need to set life goals which can enhance your employability prospects, raise your confidence, and lead to a more fulfilling, higher quality life. Plan to make relevant, positive and effective life choices and decisions for your future to enable personal empowerment.</p>
             <h2>Managing Your Personal Development</h2>
             <p>There are a number of steps to take in managing your personal development.</p>
@@ -33,7 +33,7 @@
         </div>
         <div class="lx-single-post-footer">
             <h3><span>Written by:</span></h3>
-            <p>Knut Twitsckot a professional photographer, freelancer</p>
+            <p>{{$post->author_name}}</p>
         </div>
         <div class="lx-single-post-share">
             <h3><span>Share on:</span></h3>
@@ -50,7 +50,7 @@
             <div class="lx-single-post-comment-list">
                 <div class="lx-single-post-comment-item">
                     <div class="lx-single-post-comment-img">
-                        <img src="images/profile2.jpg" alt="Alternative title" />
+                        <img src="{{asset('images/profile2.jpg')}}" alt="Alternative title" />
                     </div>
                     <a href="#">Sakata Gintoki</a>
                     <span>17, June 2017 at 10:20 pm</span>
@@ -64,7 +64,7 @@
                     <div class="lx-clear-fix"></div>
                     <div class="lx-single-post-comment-item">
                         <div class="lx-single-post-comment-img">
-                            <img src="images/profile1.jpg" alt="Alternative title" />
+                            <img src="{{asset('images/profile1.jpg')}}" alt="Alternative title" />
                         </div>
                         <a href="#">Sakata Gintoki</a>
                         <span>17, June 2017 at 10:20 pm</span>

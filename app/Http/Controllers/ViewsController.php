@@ -28,6 +28,13 @@ class ViewsController extends Controller
         return view('pages.collections');
     }
 
+    // Return a single post view with data from database
+    public function posts(Posts $post)
+    {
+        return view('pages.post',[
+            'post' => $post
+        ]);
+    }
     // Return a single collection view with data from database
     public function categories(Posts $category_name)
     {

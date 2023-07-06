@@ -28,8 +28,8 @@ Route::get('/collections', [ViewsController::class,'collections'])-> name('colle
 // Display individual category page which will display all posts in that category by getting data from database
 Route::get('/categories/{category_name}', [ViewsController::class,'categories'])-> name('categories');
 
-// Route for single post with data from database using url slug
-Route::get('/posts/{post}', [PostsController::class,'show'])-> name('post');
+// Route for single post with data from database
+Route::get('/posts/{post}', [PostsController::class,'show'])-> name('posts');
 
 // Route for gallery which will display all posts as a gallery
 Route::get('/gallery', function () {

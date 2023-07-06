@@ -35,12 +35,10 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Posts $post)
+    public function show($url_slug)
     {
-        return view('pages.posts', [
-            'post' => $post
-        ]);
-
+        $post = Posts::where('url_slug', $url_slug)->firstOrFail();
+        return view('posts.show', compact('post'));
     }
 
     /**

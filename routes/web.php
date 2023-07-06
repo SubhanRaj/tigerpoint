@@ -2,6 +2,7 @@
 
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ViewsController;
 
 /*
@@ -28,13 +29,12 @@ Route::get('/collections', [ViewsController::class,'collections'])-> name('colle
 Route::get('/categories/{category_name}', [ViewsController::class,'categories'])-> name('categories');
 
 // Route for single post with data from database using url slug
-Route::get('/post/{url_slug}', [ViewsController::class,'post'])-> name('post');
+Route::get('/posts/{url_slug}', [PostsController::class,'show'])-> name('post');
 
 // Route for gallery which will display all posts as a gallery
 Route::get('/gallery', function () {
     return view('pages.gallery');
 });
-
 
 
 // Return Privacy-policy view

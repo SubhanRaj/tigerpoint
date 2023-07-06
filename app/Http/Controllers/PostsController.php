@@ -35,9 +35,12 @@ class PostsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Posts $posts)
+    public function show(Posts $post)
     {
-        //
+        return view('pages.posts', [
+            'post' => $post
+        ]);
+
     }
 
     /**

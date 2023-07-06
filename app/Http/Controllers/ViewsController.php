@@ -36,13 +36,6 @@ class ViewsController extends Controller
         ]);
     }
 
-    // Return a single post view with data from database
-    public function post(Posts $post)
-    {
-        return view('pages.post',[
-            'post' => $post
-        ]);
-    }
 
     // Return Gallery view
     public function gallery()

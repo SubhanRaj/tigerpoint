@@ -1,5 +1,4 @@
-@extends('layouts.layout')
-@section('content')
+<x-layout>
 <div class="lx-g3-f" data-gallery="0">
     <div class="lx-gallery" data-bg="images/post7.jpg">
         <div class="lx-gallery-title">
@@ -139,4 +138,4 @@
         <h3><span>Some Text Here</span></h3>
     </div>
 </div>
-@endsection
+</x-layout>

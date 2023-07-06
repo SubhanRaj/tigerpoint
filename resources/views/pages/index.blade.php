@@ -1,6 +1,5 @@
 <!-- use layout.blade.php as master layout -->
 <x-layout>
-    
     <div class="lx-personal-card">
         <div class="lx-personal-img">
             <img src="{{asset('images/profile3.jpg')}}">

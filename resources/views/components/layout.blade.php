@@ -39,5 +39,7 @@
     <!-- footer -->
     @include('includes.footer')
 </div>
+<!-- Scripts -->
+@include('includes.scripts')
 </body>
 </html>

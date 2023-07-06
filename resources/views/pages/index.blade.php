@@ -3,12 +3,20 @@
 @section('content')
 <div class="lx-personal-card">
     <div class="lx-personal-img">
-        <img src="images/profile3.jpg">
+        <img src="{{asset('images/profile3.jpg')}}">
     </div>
     <p>Professional Photographer</p>
     <h1>Every moment worth to be memorized</h1>
 </div>
-<div class="lx-post">
+@if(count($posts) == 0)
+<p>No Posts Found</p>
+@endif
+@foreach($posts as $post)
+<x-post-left :post="$post" />
+@endforeach
+
+
+<!-- <div class="lx-post">
     <div class="lx-post-img">
         <a href="single-post.html"><img alt="Alternative Title" src="images/post2.jpg" /></a>
     </div>
@@ -19,8 +27,8 @@
         </figure>
     </div>
     <div class="lx-clear-fix"></div>
-</div>
-<div class="lx-post lx-post-right">
+</div> -->
+<!-- <div class="lx-post lx-post-right">
     <div class="lx-post-img">
         <a href="single-post.html"><img alt="Alternative Title" src="images/post4.jpg" /></a>
     </div>
@@ -79,7 +87,8 @@
         </figure>
     </div>
     <div class="lx-clear-fix"></div>
-</div>
+</div> 
+-->
 <div class="lx-navigation">
     <a href="#" class="lx-prev">PREV</a>
     <a href="#" class="lx-next">NEXT</a>

@@ -25,10 +25,10 @@ Route::get('/about', [ViewsController::class,'about'])-> name('about');
 Route::get('/collections', [ViewsController::class,'collections'])-> name('collections');
 
 // Display individual category page which will display all posts in that category by getting data from database
-Route::get('/collections/{id}', [ViewsController::class,'category'])-> name('category');
+Route::get('/collections/{category_name}', [ViewsController::class,'category'])-> name('category');
 
-// Route for single post with data from database using id
-Route::get('/single-post/{id}', [ViewsController::class,'singlePost'])-> name('singlePost');
+// Route for single post with data from database using url slug
+Route::get('/single-post/{url_slug}', [ViewsController::class,'singlePost'])-> name('single-post');
 
 // Route for gallery which will display all posts as a gallery
 Route::get('/gallery', function () {

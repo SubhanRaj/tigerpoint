@@ -34,7 +34,7 @@
     @include('includes.header')
     <!-- main body -->
     <div class="lx-main">
-       @yield('content')
+        @yield('content')
     </div>
     <!-- footer -->
     @include('includes.footer')

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use view;
-use App\Models\Post;
 use App\Models\Posts;
 use Illuminate\Http\Request;
 
@@ -30,15 +29,19 @@ class ViewsController extends Controller
     }
 
     // Return a single collection view with data from database
-    public function category()
+    public function category(Posts $category_name)
     {
-        return view('pages.category');
+        return view('pages.category',[
+            'category_name' => $category_name
+        ]);
     }
 
     // Return a single post view with data from database
-    public function singlePost()
+    public function singlePost(Posts $post)
     {
-        return view('pages.single-post');
+        return view('pages.single-post',[
+            'post' => $post
+        ]);
     }
 
     // Return Gallery view

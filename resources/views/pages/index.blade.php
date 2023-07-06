@@ -14,16 +14,18 @@
 @foreach($posts as $post)
 <!-- Show post with odd if using lx-post, and post with even id using lx-post lx-post-right -->
 @if ($post->id % 2 == 0)
-<x-post-right :post="$post" />
-@else
 <x-post-left :post="$post" />
+@else
+<x-post-right :post="$post" />
 @endif
 @endforeach
 @endif
 
+
 <div class="lx-navigation">
-    <a href="#" class="lx-prev">PREV</a>
-    <a href="#" class="lx-next">NEXT</a>
-    <div class="lx-clear-fix"></div>
+    <a href="{{ $posts->previousPageUrl() }}" class="lx-prev">PREV</a>
+    <a href="{{ $posts->nextPageUrl() }}" class="lx-next">NEXT</a>
+    <div class="lx-clear-fix">
+    </div>
 </div>
 @endsection

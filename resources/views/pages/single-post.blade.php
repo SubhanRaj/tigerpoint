@@ -3,10 +3,11 @@
 <div class="lx-single-post">
     <div class="lx-single-post-header">
         <h1>{{$post->title}}</h1>
+        
         <span>April 22th, 2020</span>
     </div>
     <div class="lx-single-post-thumbnail">
-        <img alt="{{$post->title}}" src="images/post9.jpg" />
+        <img alt="{{$post->title}}" src="{{asset('images/post9.jpg')}}" />
         <p>The harder you work for something, the greater you’ll feel when you achieve it</p>
     </div>
     <div class="lx-single-post-content">

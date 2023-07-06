@@ -27,6 +27,7 @@ class PostsFactory extends Factory
             'author_id' => $this->faker->numberBetween(1, 10),
             'category_id' => $this->faker->numberBetween(1, 10),
             'category_name' => $this->faker->word(),
+            'url_slug' => $this->faker->slug(),
 
 
         ];

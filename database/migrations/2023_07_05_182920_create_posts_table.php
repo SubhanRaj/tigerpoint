@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('author_id');
             $table->integer('category_id');
             $table->string('category_name', 100);
+            $table->string('url_slug', 100);
             $table->timestamps();
         });
     }

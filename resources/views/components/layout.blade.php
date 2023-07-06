@@ -34,7 +34,7 @@
     @include('includes.header')
     <!-- main body -->
     <div class="lx-main">
-        @yield('content')
+        {{$slot}}
     </div>
     <!-- footer -->
     @include('includes.footer')

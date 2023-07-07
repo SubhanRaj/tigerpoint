@@ -12,7 +12,7 @@ class ViewsController extends Controller
     public function index()
     {
         return view('pages.index', [
-            'posts' => Posts::latest()->paginate(5)
+            'posts' => Posts::latest()->filter(request(['search', 'category', 'tag']))->paginate(6)->withQueryString()
         ]);
     }
 

@@ -21,11 +21,7 @@
             <i class="material-icons">search</i>
         </div>
         <div class="lx-header-search">
-            <form action="#" method="post" autocomplete="off">
-                <label><input type="text" name="keyword" placeholder="SEARCH" /></label>
-                <input type="submit" name="submit" value="search" class="material-icons" />
-                <input type="button" name="close" value="close" class="material-icons" />
-            </form>
+            @include('includes.search')
         </div>
         <div class="lx-clear-fix"></div>
     </div>

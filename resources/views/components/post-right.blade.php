@@ -7,6 +7,8 @@
         <figure>
             <span><a href="/collection/{{$post->category_name}}">{{$post->category_name}}</a></span>
             <h3><a href="/posts/{{$post->url_slug}}">{{$post->title}}</a></h3>
+            <p class="mb-4">{{$post->short_description}}</p>
+            <x-tags :tagsCsv="$post->tags" />
         </figure>
     </div>
     <div class="lx-clear-fix"></div>

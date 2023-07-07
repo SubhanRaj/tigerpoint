@@ -17,13 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100);
             $table->dateTime('date_published');
-            $table->text('text_content');
+            $table->text('short_description');
+            $table->text('long_description');
             $table->string('image', 100);
             $table->string('author_name', 100);
             $table->integer('author_id');
             $table->integer('category_id');
             $table->string('category_name', 100);
             $table->string('url_slug', 100);
+            $table->string('tags', 100);
             $table->timestamps();
         });
     }

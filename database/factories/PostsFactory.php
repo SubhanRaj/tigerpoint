@@ -21,15 +21,15 @@ class PostsFactory extends Factory
 
             'title' => $this->faker->sentence(3),
             'date_published' => $this->faker->dateTimeBetween('-1 year', 'now'),
-            'text_content' => $this->faker->paragraph(3),
+            'short_description' => $this->faker->paragraph(3),
+            'long_description' => $this->faker->paragraph(10),
             'image' => $this->faker->imageUrl(640, 480, 'animals', true),
             'author_name' => $this->faker->name(),
             'author_id' => $this->faker->numberBetween(1, 10),
             'category_id' => $this->faker->numberBetween(1, 10),
             'category_name' => $this->faker->word(),
             'url_slug' => $this->faker->slug(),
-
-
+            'tags' => $this->faker->words(5, true),
         ];
     }
 }

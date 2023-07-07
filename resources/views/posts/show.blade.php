@@ -6,10 +6,10 @@
         </div>
         <div class="lx-single-post-thumbnail">
             <img alt="{{$post->title}}" src="{{$post->image}}" />
-            <p>The harder you work for something, the greater you’ll feel when you achieve it</p>
+            <p>{{$post->short_description}}</p>
         </div>
         <div class="lx-single-post-content">
-            <p>{{$post->text_content}}</p>
+            <p>{{$post->long_description}}</p>
             <p>This <a href="#">page</a> helps you to identify the skills you need to set life goals which can enhance your employability prospects, raise your confidence, and lead to a more fulfilling, higher quality life. Plan to make relevant, positive and effective life choices and decisions for your future to enable personal empowerment.</p>
             <h2>Managing Your Personal Development</h2>
             <p>There are a number of steps to take in managing your personal development.</p>

@@ -741,3 +741,25 @@ div.lx-post:last-of-type{
 		font-size:13px;
 	}
 }
+
+/* tags */
+ul.flex {
+    display: flex;
+}
+
+ul.flex li.tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    margin-right: 0.5rem;
+    font-size: 0.75rem;
+}
+
+ul.flex li.tag a {
+    color: white;
+    text-decoration: none;
+}

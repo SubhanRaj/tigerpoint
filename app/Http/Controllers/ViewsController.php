@@ -27,7 +27,11 @@ class ViewsController extends Controller
     {
         return view('pages.collections');
     }
-
+    // Retun the categories page with data from database
+    public function categories()
+    {
+        return view('pages.categories');
+    }
     // Return a single post view with data from database
     public function posts(Posts $post)
     {
@@ -35,13 +39,14 @@ class ViewsController extends Controller
             'post' => $post
         ]);
     }
+    
     // Return a single collection view with data from database
-    public function categories(Posts $category_name)
-    {
-        return view('pages.category',[
-            'category_name' => $category_name
-        ]);
-    }
+    // public function categories(Posts $category_name)
+    // {
+    //     return view('pages.category',[
+    //         'category_name' => $category_name
+    //     ]);
+    // }
 
 
     // Return Gallery view

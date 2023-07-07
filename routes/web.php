@@ -25,8 +25,11 @@ Route::get('/about', [ViewsController::class,'about'])-> name('about');
 // display all collections
 Route::get('/collections', [ViewsController::class,'collections'])-> name('collections');
 
+// display all categories
+Route::get('/categories', [ViewsController::class,'categories'])-> name('categories');
+
 // Display individual category page which will display all posts in that category by getting data from database
-Route::get('/categories/{category_name}', [ViewsController::class,'categories'])-> name('categories');
+// Route::get('/categories/{category_name}', [ViewsController::class,'categories'])-> name('categories');
 
 // Route for single post with data from database
 Route::get('/posts/{post}', [PostsController::class,'show'])-> name('posts');

@@ -3,7 +3,9 @@
         <div class="lx-single-post-header">
             <h1>{{ $post->title }}</h1>
             <span class="lx-post-date">{{ $post->created_at->format('M d, Y') }}</span>
+            <x-tags :tagsCsv="$post->tags" />
         </div>
+
         <div class="lx-single-post-thumbnail">
             <img alt="{{$post->title}}" src="{{$post->image}}" />
             <p>{{$post->short_description}}</p>

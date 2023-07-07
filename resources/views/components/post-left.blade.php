@@ -7,7 +7,7 @@
         <figure>
             <span><a href="/collection/{{$post->category_name}}">{{$post->category_name}}</a></span>
             <h3><a href="/posts/{{$post->url_slug}}">{{$post->title}}</a></h3>
-            <p style="margin-bottom: 1rem;">{{$post->short_description}}</p>
+            <p>{{$post->short_description}}</p>
             <x-tags :tagsCsv="$post->tags" />
         </figure>
     </div>

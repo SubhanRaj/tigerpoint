@@ -29,7 +29,7 @@ class PostsFactory extends Factory
             'category_id' => $this->faker->numberBetween(1, 10),
             'category_name' => $this->faker->word(),
             'url_slug' => $this->faker->slug(),
-            'tags' => $this->faker->words(5, true),
+            'tags' => implode(',', $this->faker->words(5)),
         ];
     }
 }

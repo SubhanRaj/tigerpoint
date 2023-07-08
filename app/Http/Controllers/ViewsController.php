@@ -32,6 +32,11 @@ class ViewsController extends Controller
     {
         return view('pages.categories');
     }
+    // Return Gallery view
+    public function gallery()
+    {
+        return view('pages.gallery');
+    }
     // Return a single post view with data from database
     public function posts(Posts $post)
     {
@@ -49,9 +54,5 @@ class ViewsController extends Controller
     // }
 
 
-    // Return Gallery view
-    public function gallery()
-    {
-        return view('pages.gallery');
-    }
+    
 }

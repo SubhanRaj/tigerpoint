@@ -32,7 +32,7 @@ Route::get('/categories', [ViewsController::class,'categories'])-> name('categor
 // Route::get('/categories/{category_name}', [ViewsController::class,'categories'])-> name('categories');
 
 // Route for single post with data from database
-Route::get('/posts/{post}', [PostsController::class,'show'])-> name('posts');
+Route::get('/{post}', [PostsController::class,'show'])-> name('posts');
 
 // Route for gallery which will display all posts as a gallery
 Route::get('/gallery', function () {

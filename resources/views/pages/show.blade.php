@@ -12,7 +12,7 @@
         </div>
         <div class="lx-single-post-content">
             <p>{{$post->long_description}}</p>
-            <p>This <a href="#">page</a> helps you to identify the skills you need to set life goals which can enhance your employability prospects, raise your confidence, and lead to a more fulfilling, higher quality life. Plan to make relevant, positive and effective life choices and decisions for your future to enable personal empowerment.</p>
+            <!-- <p>This <a href="#">page</a> helps you to identify the skills you need to set life goals which can enhance your employability prospects, raise your confidence, and lead to a more fulfilling, higher quality life. Plan to make relevant, positive and effective life choices and decisions for your future to enable personal empowerment.</p>
             <h2>Managing Your Personal Development</h2>
             <p>There are a number of steps to take in managing your personal development.</p>
             <h3>1. Developing a Personal Vision</h3>
@@ -31,7 +31,7 @@
             <p>There is more about this on our <a href="#">page</a>, Recording Your Personal Development.</p>
             <p>This reflection may well help to motivate you to learn more skills in the future. Try keeping a learning log or journal as you develop your skills and knowledge.</p>
             <h3>5. Reviewing and Revising Personal Development Plans</h3>
-            <p>Our <a href="#">page</a> on Learning Styles uses Kolb’s Experiential Learning Cycle to show that learning is a cycle. For more effective learning, it is important to reflect on your experience, and consider what you have learnt from it. Regular review of your personal development plans, and your development activities, will ensure that you learn from what you have done. It will also ensure that your activities continue to move you towards your goals, and that your goals or vision remain relevant to you.</p>
+            <p>Our <a href="#">page</a> on Learning Styles uses Kolb’s Experiential Learning Cycle to show that learning is a cycle. For more effective learning, it is important to reflect on your experience, and consider what you have learnt from it. Regular review of your personal development plans, and your development activities, will ensure that you learn from what you have done. It will also ensure that your activities continue to move you towards your goals, and that your goals or vision remain relevant to you.</p> -->
         </div>
         <div class="lx-single-post-footer">
             <h3><span>Written by:</span></h3>

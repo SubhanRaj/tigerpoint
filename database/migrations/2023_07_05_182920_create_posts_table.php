@@ -27,12 +27,6 @@ return new class extends Migration
             $table->string('url_slug', 100);
             $table->string('tags', 100);
             $table->timestamps();
-
-            // Add foreign key constraint for author_id
-            $table->foreign('author_id')->references('id')->on('authors');
-
-            // Add foreign key constraint for category_id
-            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

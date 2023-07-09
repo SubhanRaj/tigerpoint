@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-    //   Define schema, also use factories for filling 
-    //   the table with data
+        //   Define schema, also use factories for filling 
+        //   the table with data
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title', 100);
@@ -27,6 +27,12 @@ return new class extends Migration
             $table->string('url_slug', 100);
             $table->string('tags', 100);
             $table->timestamps();
+
+            // Add foreign key constraint for author_id
+            $table->foreign('author_id')->references('id')->on('authors');
+
+            // Add foreign key constraint for category_id
+            $table->foreign('category_id')->references('id')->on('categories');
         });
     }
 

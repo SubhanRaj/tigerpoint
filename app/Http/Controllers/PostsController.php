@@ -38,7 +38,7 @@ class PostsController extends Controller
     public function show($url_slug)
     {
         $post = Posts::where('url_slug', $url_slug)->firstOrFail();
-        return view('pages.show', compact('post'));
+        return view('posts.show', compact('post'));
     }
 
     /**

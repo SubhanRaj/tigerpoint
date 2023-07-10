@@ -14,12 +14,15 @@
                     <li><a href="/collections">Collection</a></li>
                     <li><a href="/categories">Categories</a></li>
                     <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
                 </ul>
             </div>
         </div>
         <div class="lx-search-btn">
             <i class="material-icons">search</i>
         </div>
+        
         <div class="lx-header-search">
             @include('includes.search')
         </div>

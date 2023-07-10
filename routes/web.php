@@ -1,6 +1,6 @@
 <?php
 
-
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ViewsController;
@@ -45,6 +45,9 @@ Route::get('/privacy-policy', function () {
 
 // Route for single post with data from database
 Route::get('/{post}', [PostsController::class, 'show'])->name('posts');
+
+// login route
+Route::get('/login', [AdminController::class, 'login']) -> name('login');
 
 // Custom 404 Page
 Route::fallback(function () {

@@ -44,7 +44,7 @@ Route::get('/privacy-policy', function () {
 });
 
 // Route for single post with data from database
-Route::get('/{post}', [PostsController::class, 'show'])->name('posts');
+Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts');
 
 // login route
 Route::get('/login', [AdminController::class, 'login']) -> name('login');

@@ -26,6 +26,7 @@
         $("link[id='themeColors']").attr('href', "{{asset('css/admin/style.min.css')}}");
     } else {
         $("link[id='themeColors']").attr('href', "{{asset('css/admin/style-dark.min.css')}}");
+
     }
     // Listen for changes to the system theme preference
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(event) {

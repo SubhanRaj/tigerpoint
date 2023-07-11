@@ -4,8 +4,10 @@
     <div class="position-relative z-index-5">
         <div class="row">
             <div class="col-lg-6 col-xl-8 col-xxl-9">
-                <a href="index.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
+                <a href="/" class="text-nowrap logo-img d-block px-4 py-9 w-100">
                     <img src="/" width="180" alt="">
+                    <i class="ti ti-arrow-left"></i>
+                    Tigerpoint
                 </a>
                 <div class="d-none d-lg-flex align-items-center justify-content-center" style="height: calc(100vh - 80px);">
                     <img src="{{asset('images/admin/backgrounds/login-security.svg')}}" alt="" class="img-fluid" width="500">

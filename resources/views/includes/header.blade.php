@@ -16,6 +16,7 @@
                     <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
+                    <li><a href="/admin/dashboard">Dashboard </a></li>
                 </ul>
             </div>
         </div>

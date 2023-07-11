@@ -20,6 +20,11 @@ class AdminController extends Controller
     public function register(){
         return view('admin.auth.register');
     }
+
+    // Return dashboard page in admin/pages/dashboard
+    public function dashboard(){
+        return view('admin.pages.dashboard');
+    }
     
 }
 

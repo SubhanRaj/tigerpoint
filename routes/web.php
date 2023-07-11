@@ -50,12 +50,14 @@ Route::get('/{post}', [PostsController::class, 'show'])->name('posts');
 Route::get('/login', [AdminController::class, 'login']) -> name('login');
 // Forgot Password route
 Route::get('/forgot-password', [AdminController::class, 'forgotPassword']) -> name('forgot-password');
-
-
 // Register route
 Route::get('/register', [AdminController::class, 'register']) -> name('register');
+// Dashboard route
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard']) -> name('dashboard');
 
-// Custom 404 Page
+// If a route does not exist or not found, return 404 page
 Route::fallback(function () {
     return view('pages.404');
 });
+
+

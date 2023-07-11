@@ -48,6 +48,12 @@ Route::get('/{post}', [PostsController::class, 'show'])->name('posts');
 
 // login route
 Route::get('/login', [AdminController::class, 'login']) -> name('login');
+// Forgot Password route
+Route::get('/forgot-password', [AdminController::class, 'forgotPassword']) -> name('forgot-password');
+
+
+// Register route
+Route::get('/register', [AdminController::class, 'register']) -> name('register');
 
 // Custom 404 Page
 Route::fallback(function () {

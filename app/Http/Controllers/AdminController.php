@@ -7,10 +7,19 @@ use Laravel\Fortify\Fortify;
 
 class AdminController extends Controller
 {
-//    Return login page in admin/auth/login
+    //Return login page in admin/auth/login
     public function login(){
         return view('admin.auth.login');
-    }   
+    }
+    // Return forgot password page in admin/auth/forgot-password
+    public function forgotPassword(){
+        return view('admin.auth.forgot-password');
+    }
+
+    // Return register page in admin/auth/register
+    public function register(){
+        return view('admin.auth.register');
+    }
     
 }
 

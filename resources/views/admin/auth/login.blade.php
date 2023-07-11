@@ -1,5 +1,6 @@
 <!-- USe layout from views/admin/components/layout.blade.php to create basic layout for login page using slots -->
-<x-admin.layout>
+@extends('admin.layout')
+@section('content')
     <div class="position-relative overflow-hidden radial-gradient min-vh-100">
         <div class="position-relative z-index-5">
             <div class="row">
@@ -66,4 +67,4 @@
 
     </div>
     </div>
-</x-admin.layout>
+@endsection

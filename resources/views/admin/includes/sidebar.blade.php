@@ -3,7 +3,7 @@
     <!-- Sidebar scroll-->
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="index.html" class="text-nowrap logo-img">
+            <a href="/" class="text-nowrap logo-img">
                 <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/dark-logo.svg" class="dark-logo" width="180" alt="" />
                 <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/light-logo.svg" class="light-logo" width="180" alt="" />
             </a>
@@ -1492,26 +1492,9 @@
                         <span class="hide-menu badge rounded-pill border border-primary text-primary fs-2 py-1 px-2">Outline</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="https://google.com/" aria-expanded="false">
-                        <span class="d-flex">
-                            <i class="ti ti-star"></i>
-                        </span>
-                        <span class="hide-menu">External Link</span>
-                    </a>
-                </li>
+               
             </ul>
-            <div class="unlimited-access hide-menu bg-light-primary position-relative my-7 rounded">
-                <div class="d-flex">
-                    <div class="unlimited-access-title">
-                        <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Unlimited Access</h6>
-                        <button class="btn btn-primary fs-2 fw-semibold lh-sm">Signup</button>
-                    </div>
-                    <div class="unlimited-access-img">
-                        <img src="../../dist/images/backgrounds/rocket.png" alt="" class="img-fluid">
-                    </div>
-                </div>
-            </div>
+            
         </nav>
         <div class="fixed-profile p-3 bg-light-secondary rounded sidebar-ad mt-3">
             <div class="hstack gap-3">

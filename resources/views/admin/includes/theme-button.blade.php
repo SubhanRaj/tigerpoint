@@ -3,18 +3,18 @@
 </button>
 <div class="offcanvas offcanvas-end customizer" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-simplebar="">
     <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
-        <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">Settings</h4>
+        <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">Theme Settings</h4>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body p-4">
         <div class="theme-option pb-4">
             <h6 class="fw-semibold fs-4 mb-1">Theme Option</h6>
             <div class="d-flex align-items-center gap-3 my-3">
-                <a href="javascript:void(0)" onclick="toggleTheme('{{asset('css/admin/style.min.css')}}')" class="rounded-2 p-9 customizer-box hover-img d-flex align-items-center gap-2 light-theme text-dark">
+                <a href="javascript:void(0)" onclick="toggleTheme('{{asset('css/admin/style.min.css')}}'); localStorage.setItem('theme', 'light');" class="rounded-2 p-9 customizer-box hover-img d-flex align-items-center gap-2 light-theme text-dark">
                     <i class="ti ti-brightness-up fs-7 text-primary"></i>
                     <span class="text-dark">Light</span>
                 </a>
-                <a href="javascript:void(0)" onclick="toggleTheme('{{asset('css/admin/style-dark.min.css')}}')" class="rounded-2 p-9 customizer-box hover-img d-flex align-items-center gap-2 dark-theme text-dark">
+                <a href="javascript:void(0)" onclick="toggleTheme('{{asset('css/admin/style-dark.min.css')}}'); localStorage.setItem('theme', 'dark');" class="rounded-2 p-9 customizer-box hover-img d-flex align-items-center gap-2 dark-theme text-dark">
                     <i class="ti ti-moon fs-7 "></i>
                     <span class="text-dark">Dark</span>
                 </a>

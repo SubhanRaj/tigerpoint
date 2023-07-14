@@ -39,14 +39,6 @@
                         </div>
                         <form>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Role</label>
-                                <select class="form-select mr-sm-2" id="inlineFormCustomSelect">
-                                    <option selected>Select Role</option>
-                                    <option value="1">Admin</option>
-                                    <option value="2">User</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Username</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                             </div>

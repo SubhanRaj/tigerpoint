@@ -19,9 +19,14 @@
                         </span>
                     </div>
                     <div>
-                        <h3 class="fw-semibold">Hi, <span class="text-dark">Johnathan</span>
+                        <h3 class="fw-semibold">Hi, <span class="text-dark">
+                           
+                            {{ auth()->user()->name ?? 'Guest' }}                          
+                        </span>
                         </h3>
-                        <span>Cheers, and happy activities - July 6 2023</span>
+                        <span>Cheers, and happy activities -
+                            {{ date('F d, Y') }}
+                        </span>
                     </div>
                 </div>
                 <div class="card">

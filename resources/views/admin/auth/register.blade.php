@@ -36,23 +36,35 @@
                             <p class="mb-0 fs-4 px-3 d-inline-block bg-white text-dark z-index-5 position-relative">or sign Up with</p>
                             <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
                         </div>
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="/register">
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" aria-describedby="textHelp">
+                                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" placeholder="John Doe" aria-describedby="nameHelp">
                             </div>
+                            @error('name')
+                                <div class="invalid-feedback d-block">{{$message}}</div>
+                            @enderror
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@example.com" aria-describedby="emailHelp">
+                                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" placeholder="johndoe@example.com" aria-describedby="emailHelp">
+                                @error('email')
+                                    <div class="invalid-feedback d-block">{{$message}}</div>                                    
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp">
+                                @error('password')
+                                    <div class="invalid-feedback d-block">{{$message}}</div>                                    
+                                @enderror
                             </div>
                             <div class="mb-4">
                                 <label for="confirmpassword" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" aria-describedby="passwordHelp">
+                                @error('password_confirmation')
+                                    <div class="invalid-feedback d-block">{{$message}}</div>
+                                @enderror
                             </div>
                             <input type="submit" value="Sign Up" class="btn btn-primary w-100 py-8 mb-4 rounded-2">
                         </form>

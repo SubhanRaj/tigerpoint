@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ViewsController;
@@ -46,14 +46,20 @@ Route::get('/privacy-policy', function () {
 // Route for single post with data from database
 Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts');
 
-// login route
-Route::get('/login', [AdminController::class, 'login']) -> name('login');
-// Forgot Password route
-Route::get('/forgot-password', [AdminController::class, 'forgotPassword']) -> name('forgot-password');
-// Register route
-Route::get('/register', [AdminController::class, 'register']) -> name('register');
-// Dashboard route
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard']) -> name('dashboard');
+// Show user registration form
+Route::get('/register', [UserController::class, 'create'])->name('register');
+
+// Handle user registration form data
+Route::post('/register', [UserController::class, 'store'])->name('register.store');
+
+// Show user login form
+Route::get('/login', [UserController::class, 'login'])->name('login');
+
+// take authenticated user to dashboard, user UserController, the user must be authenticated and logged in to access this route, otherwise redirect to login page
+Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+
+// handle logout
+Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 
 // If a route does not exist or not found, return 404 page
 Route::fallback(function () {

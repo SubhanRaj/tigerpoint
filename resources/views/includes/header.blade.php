@@ -14,9 +14,14 @@
                     <li><a href="/collections">Collection</a></li>
                     <li><a href="/categories">Categories</a></li>
                     <li><a href="/gallery">Gallery</a></li>
+                    <!-- show login and register, if user is not logged in otherwise show dashbaord and logout -->
+                    @guest
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
-                    <li><a href="/admin/dashboard">Dashboard </a></li>
+                    @else
+                    <li><a href="/admin/dashboard">Dashboard</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                    @endguest
                 </ul>
             </div>
         </div>

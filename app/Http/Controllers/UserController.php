@@ -43,19 +43,41 @@ class UserController extends Controller
     {
         return view('admin.auth.login');
     }
+    // Handle user login form data, if user check remember me, then remember user for 30 days 
+    public function authenticate(Request $request)
+    {
+        $formfields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required', 'string'],
+        ]);
 
+        if (auth()->attempt($formfields, $request->remember)) {
+            $request->session()->regenerate();
+            return redirect()->route('dashboard');
+        }
+
+        return back()->withErrors([
+            'email' => 'Invalid Credentials',
+        ]);
+    }
+    
     // Take authenticaated user to dashboard else redirect to login page
     public function dashboard()
     {
         return view('admin.pages.dashboard');
     }
 
+    // Show forgot password form
+    public function forgotPassword()
+    {
+        return view('admin.auth.forgot-password');
+    }
     // Handle user logout
     public function logout()
     {
         auth()->logout();
         session()->invalidate();
         session()->regenerateToken();
-        return redirect()->route('/');
+        return redirect()->route('home');
     }
 }

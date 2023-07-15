@@ -15,7 +15,7 @@
                 <img src="{{asset('images/admin/profile/user-1.jpg')}}" class="rounded-circle" width="80" height="80" alt="" />
                 <div class="ms-3">
                     <h5 class="mb-1 fs-3">{{ auth()->user()->name ?? 'Guest' }} </h5>
-                    <span class="mb-1 d-block text-dark">{{ auth()->user()->name ?? 'tester' }}</span>
+                    <!-- <span class="mb-1 d-block text-dark">{{ auth()->user()->name ?? 'tester' }}</span> -->
                     <p class="mb-0 d-flex text-dark align-items-center gap-2">
                         <i class="ti ti-mail fs-4"></i>{{ auth()->user()->email ?? 'test@tigerpoint.in'}}
                     </p>
@@ -29,24 +29,6 @@
                     <div class="w-75 d-inline-block v-middle ps-3">
                         <h6 class="mb-1 bg-hover-primary fw-semibold"> My Profile </h6>
                         <span class="d-block text-dark">Account Settings</span>
-                    </div>
-                </a>
-                <a href="app-email.html" class="py-8 px-7 d-flex align-items-center">
-                    <span class="d-flex align-items-center justify-content-center bg-light rounded-1 p-6">
-                        <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/svgs/icon-inbox.svg" alt="" width="24" height="24">
-                    </span>
-                    <div class="w-75 d-inline-block v-middle ps-3">
-                        <h6 class="mb-1 bg-hover-primary fw-semibold">My Inbox</h6>
-                        <span class="d-block text-dark">Messages & Emails</span>
-                    </div>
-                </a>
-                <a href="app-notes.html" class="py-8 px-7 d-flex align-items-center">
-                    <span class="d-flex align-items-center justify-content-center bg-light rounded-1 p-6">
-                        <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/svgs/icon-tasks.svg" alt="" width="24" height="24">
-                    </span>
-                    <div class="w-75 d-inline-block v-middle ps-3">
-                        <h6 class="mb-1 bg-hover-primary fw-semibold">My Task</h6>
-                        <span class="d-block text-dark">To-do and Daily Tasks</span>
                     </div>
                 </a>
             </div>

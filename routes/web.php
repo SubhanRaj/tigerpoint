@@ -19,6 +19,7 @@ use App\Http\Controllers\ViewsController;
 // Home Route
 Route::get('/', [ViewsController::class,'index'])-> name('home');
 
+
 // About Route
 Route::get('/about', [ViewsController::class,'about'])-> name('about');
 
@@ -32,10 +33,8 @@ Route::get('/categories', [ViewsController::class,'categories'])-> name('categor
 // Route::get('/categories/{category_name}', [ViewsController::class,'categories'])-> name('categories');
 
 
-
 // Route for gallery which will display all posts as a gallery
 Route::get('/gallery', [ViewsController::class,'gallery'])-> name('gallery');
-
 
 
 // Return Privacy-policy view
@@ -47,13 +46,19 @@ Route::get('/privacy-policy', function () {
 Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts');
 
 // Show user registration form
-Route::get('/register', [UserController::class, 'create'])->name('register');
+Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
 
 // Handle user registration form data
-Route::post('/register', [UserController::class, 'store'])->name('register.store');
+Route::post('/register', [UserController::class, 'store'])->name('register.store')->middleware('guest');
 
 // Show user login form
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+
+// Handle user login form data
+Route::post('/login', [UserController::class, 'authenticate'])->name('login.authenticate')->middleware('guest');
+
+// show forgot password form
+Route::get('/forgot-password', [UserController::class, 'forgotPassword'])->name('forgot.password');
 
 // take authenticated user to dashboard, user UserController, the user must be authenticated and logged in to access this route, otherwise redirect to login page
 Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware('auth');

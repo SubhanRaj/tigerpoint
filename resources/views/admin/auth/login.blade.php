@@ -37,30 +37,37 @@
                             <p class="mb-0 fs-4 px-3 d-inline-block bg-white text-dark z-index-5 position-relative">or sign in with</p>
                             <span class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
                         </div>
-                        <form>
+                        <form method="POST" action="/login">
+                            @csrf
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Username</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="johndoe@example.com" aria-describedby="emailHelp" value="{{old('email')}}">
+                                @error('email')
+                                <div class="invalid-feedback d-block">{{$message}}</div>
+                                @enderror
                             </div>
                             <div class="mb-4">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                                @error('password')
+                                <div class="invalid-feedback d-block">{{$message}}</div>
+                                @enderror
                             </div>
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <div class="form-check">
-                                    <input class="form-check-input primary" type="checkbox" value="" id="flexCheckChecked" checked>
+                                    <input class="form-check-input primary" type="checkbox" value="remember" id="flexCheckChecked">
                                     <label class="form-check-label text-dark" for="flexCheckChecked">
                                         Remember this Device
                                     </label>
                                 </div>
                                 <a class="text-primary fw-medium" href="/forgot-password">Forgot Password ?</a>
                             </div>
-                            <a href="/" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <p class="fs-4 mb-0 fw-medium">New to Tiger Point</p>
-                                <a class="text-primary fw-medium ms-2" href="/register">Create an account</a>
-                            </div>
+                            <input type="submit" value="Sign In" class="btn btn-primary w-100 py-8 mb-4 rounded-2">
                         </form>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <p class="fs-4 mb-0 fw-medium">New to Tiger Point</p>
+                            <a class="text-primary fw-medium ms-2" href="/register">Create an account</a>
+                        </div>
                     </div>
                 </div>
             </div>

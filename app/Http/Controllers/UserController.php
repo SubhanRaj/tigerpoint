@@ -30,12 +30,11 @@ class UserController extends Controller
 
         // Create new user
         $user = User::create($formfields);
-
+        
         // login the user, start session and redirect to dashboard
         auth()->login($user);
         return redirect()->route('dashboard');
       
-
     }
 
     // Show user login form
@@ -64,7 +63,9 @@ class UserController extends Controller
     // Take authenticaated user to dashboard else redirect to login page
     public function dashboard()
     {
-        return view('admin.pages.dashboard');
+        if (auth()->check()) {
+            return view('admin.pages.dashboard');
+        }
     }
 
     // Show forgot password form

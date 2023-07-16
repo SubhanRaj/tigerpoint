@@ -119,19 +119,11 @@
                     <span class="hide-menu">Other Options</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="/admin/user-profile" aria-expanded="false">
                         <span>
                             <i class="ti ti-user-circle"></i>
                         </span>
                         <span class="hide-menu">User Profile</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
-                        <span>
-                            <i class="ti ti-user-circle"></i>
-                        </span>
-                        <span class="hide-menu">Account Setting</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

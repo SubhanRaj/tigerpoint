@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ViewsController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,8 @@ Route::get('/privacy-policy', function () {
 // Route for single post with data from database
 Route::get('/posts/{post}', [PostsController::class, 'show'])->name('posts');
 
+// ======================== User Registration, Login, Logout, Forgot Password, OTP Verification Routes ========================
+
 // Show user registration form
 Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
 
@@ -69,12 +72,19 @@ Route::post('/login', [UserController::class, 'authenticate'])->name('login.auth
 // show forgot password form
 Route::get('/forgot-password', [UserController::class, 'forgotPassword'])->name('forgot.password');
 
-// take authenticated user to dashboard, user UserController, the user must be authenticated and logged in to access this route, otherwise redirect to login page
-Route::get('/admin/dashboard', [UserController::class, 'dashboard'])->name('dashboard')->middleware('auth');
-
 // handle logout
 Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 
+// ======================== Admin Routes ========================
+
+// take authenticated user to dashboard after login
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+// Show user profile
+Route::get('/admin/user-profile', [AdminController::class, 'userprofile'])->name('user-profile')->middleware('auth');
+
+
+
+// ======================== Extra Routes ========================
 // If a route does not exist or not found, return 404 page
 Route::fallback(function () {
     return view('pages.404');

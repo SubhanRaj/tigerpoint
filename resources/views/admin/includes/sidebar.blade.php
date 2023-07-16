@@ -3,7 +3,7 @@
     <!-- Sidebar scroll-->
     <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
-            <a href="dashboard" class="text-nowrap logo-img">
+            <a href="/" class="text-nowrap logo-img">
                 <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/dark-logo.svg" class="dark-logo" width="180" alt="" />
                 <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/light-logo.svg" class="light-logo" width="180" alt="" />
             </a>
@@ -75,6 +75,22 @@
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-database"></i>
+                        </div>
+                        <span class="hide-menu">Collections</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-category"></i>
+                        </div>
+                        <span class="hide-menu">Categories</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-users"></i>
                         </div>
                         <span class="hide-menu">Users</span>
@@ -103,7 +119,7 @@
                     <span class="hide-menu">Other Options</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="page-user-profile.html" aria-expanded="false">
+                    <a class="sidebar-link" href="#" aria-expanded="false">
                         <span>
                             <i class="ti ti-user-circle"></i>
                         </span>
@@ -111,11 +127,19 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="page-account-settings.html" aria-expanded="false">
+                    <a class="sidebar-link" href="#" aria-expanded="false">
                         <span>
                             <i class="ti ti-user-circle"></i>
                         </span>
                         <span class="hide-menu">Account Setting</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{url ('/logout')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-logout"></i>
+                        </span>
+                        <span class="hide-menu">Log Out</span>
                     </a>
                 </li>
                 <!-- <li class="sidebar-item">

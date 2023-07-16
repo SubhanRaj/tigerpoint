@@ -60,13 +60,6 @@ class UserController extends Controller
         ]);
     }
     
-    // Take authenticaated user to dashboard else redirect to login page
-    public function dashboard()
-    {
-        if (auth()->check()) {
-            return view('admin.pages.dashboard');
-        }
-    }
 
     // Show forgot password form
     public function forgotPassword()

@@ -41,3 +41,14 @@
         }
     });
 </script>
+<!-- script to auto focus on the first input field and then move to the next one on keypress -->
+<script>
+    $(document).ready(function() {
+        $('#otp-digit-1').focus();
+        $('#otp-digit-1, #otp-digit-2, #otp-digit-3, #otp-digit-4, #otp-digit-5, #otp-digit-6').keyup(function() {
+            if (this.value.length == this.maxLength) {
+                $(this).next('.form-control').focus();
+            }
+        });
+    });
+</script>

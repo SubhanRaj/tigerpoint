@@ -11,7 +11,7 @@
     <meta name="keywords" content="Mordenize" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--  Favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{asset('favicon.png')}}" />
+    <link rel="shortcut icon" type="image/png" href="{{asset('favicon.ico')}}" />
     <!-- Core Css -->
     <link id="themeColors" rel="stylesheet" href="{{asset('css/admin/style.min.css')}}" />
 </head>

@@ -22,9 +22,9 @@
                 </div>
             </div>
             <div class="message-body">
-                <a href="page-user-profile.html" class="py-8 px-7 mt-8 d-flex align-items-center">
+                <a href="/admin/user-profile" class="py-8 px-7 mt-8 d-flex align-items-center">
                     <span class="d-flex align-items-center justify-content-center bg-light rounded-1 p-6">
-                        <img src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/svgs/icon-account.svg" alt="" width="24" height="24">
+                        <img src="{{asset('images/admin/icons/icon-account.svg')}}" alt="" width="24" height="24">
                     </span>
                     <div class="w-75 d-inline-block v-middle ps-3">
                         <h6 class="mb-1 bg-hover-primary fw-semibold"> My Profile </h6>

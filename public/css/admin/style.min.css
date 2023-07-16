@@ -1502,13 +1502,13 @@ input[type=number] {
     font-family: tabler-icons;
     font-style: normal;
     font-weight: 400;
-    src: url(icons/tabler-icons/fonts/tabler-icons2d35.eot?v2.11.0);
-    src: url(icons/tabler-icons/fonts/tabler-iconsd41d.eot?#iefix-v2.11.0)
+    src: url(icons/tabler-icons/fonts/tabler-icons.eot);
+    src: url(icons/tabler-icons/fonts/tabler-icons.eot)
             format("embedded-opentype"),
-        url(icons/tabler-icons/fonts/tabler-icons2d35.woff2?v2.11.0)
+        url(icons/tabler-icons/fonts/tabler-icons.woff2)
             format("woff2"),
-        url(icons/tabler-icons/fonts/tabler-iconsd41d.woff?) format("woff"),
-        url(icons/tabler-icons/fonts/tabler-icons2d35.ttf?v2.11.0)
+        url(icons/tabler-icons/fonts/tabler-icons.woff?) format("woff"),
+        url(icons/tabler-icons/fonts/tabler-icons.ttf)
             format("truetype");
 }
 .ti {

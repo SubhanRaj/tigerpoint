@@ -51,6 +51,15 @@ Route::get('/register', [UserController::class, 'create'])->name('register')->mi
 // Handle user registration form data
 Route::post('/register', [UserController::class, 'store'])->name('register.store')->middleware('guest');
 
+// Show otp verification form check if session has otp and email, if not redirect to home page, also don't allow user to access this route if user is already logged in, or if user is not registered
+if (session()->has('otp') && session()->has('email')) {
+    Route::get('/otp-verification', [UserController::class, 'otpVerification'])->name('otp.verification')->middleware('guest');
+} else {
+    Route::get('/otp-verification', function () {
+        return redirect()->route('home');
+    })->name('otp.verification')->middleware('guest');
+}
+
 // Show user login form
 Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
 
@@ -70,5 +79,9 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middle
 Route::fallback(function () {
     return view('pages.404');
 });
+
+
+
+
 
 

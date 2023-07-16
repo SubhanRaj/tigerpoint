@@ -64,15 +64,15 @@
                                     <form>
                                         <div class="mb-4">
                                             <label for="exampleInputPassword1" class="form-label fw-semibold">Current Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" value="12345678910">
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your current password">
                                         </div>
                                         <div class="mb-4">
                                             <label for="exampleInputPassword1" class="form-label fw-semibold">New Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" value="12345678910">
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your new password">
                                         </div>
                                         <div class="">
                                             <label for="exampleInputPassword1" class="form-label fw-semibold">Confirm Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" value="12345678910">
+                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm your new password">
                                         </div>
                                     </form>
                                 </div>
@@ -88,37 +88,25 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-4">
                                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Your Name</label>
-                                                    <input type="text" class="form-control" id="exampleInputtext" placeholder="Mathew Anderson">
+                                                    <input type="text" class="form-control" id="exampleInputtext" value="{{auth()->user()->name}}">
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Location</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>United Kingdom</option>
-                                                        <option value="1">United States</option>
-                                                        <option value="2">United Kingdom</option>
-                                                        <option value="3">India</option>
-                                                        <option value="3">Russia</option>
-                                                    </select>
+                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">City</label>
+                                                    <input type="text" class="form-control" id="exampleInputtext" value="{{auth()->user()->city}}" placeholder="Enter your city">
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Email</label>
-                                                    <input type="email" class="form-control" id="exampleInputtext" placeholder="info@modernize.com">
+                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Current Position</label>
+                                                    <input type="text" class="form-control" id="exampleInputtext" value="{{auth()->user()->position}}" placeholder="Enter your current position">
                                                 </div>
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="mb-4">
-                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Store Name</label>
-                                                    <input type="text" class="form-control" id="exampleInputtext" placeholder="Maxima Studio">
+                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Email</label>
+                                                    <input type="email" class="form-control" id="exampleInputtext" value="{{auth()->user()->email}}">
                                                 </div>
                                                 <div class="mb-4">
-                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Currency</label>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>India (INR)</option>
-                                                        <option value="1">US Dollar ($)</option>
-                                                        <option value="2">United Kingdom (Pound)</option>
-                                                        <option value="3">India (INR)</option>
-                                                        <option value="3">Russia (Ruble)</option>
-                                                    </select>
+                                                    <label for="exampleInputPassword1" class="form-label fw-semibold">Country</label>
+                                                    <input type="text" class="form-control" id="exampleInputtext" value="{{auth()->user()->country}}" placeholder="Enter your country">
                                                 </div>
                                                 <div class="mb-4">
                                                     <label for="exampleInputPassword1" class="form-label fw-semibold">Phone</label>
@@ -151,8 +139,8 @@
                                 <div class="card-body p-4">
                                     <h4 class="fw-semibold mb-3">Two-factor Authentication</h4>
                                     <div class="d-flex align-items-center justify-content-between pb-7">
-                                        <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis sapiente sunt earum officiis laboriosam ut.</p>
-                                        <button class="btn btn-primary">Enable</button>
+                                        <p class="mb-0">By enabling 2FA, you add an extra layer of security to your account. You will be asked to enter an additional security code when you log in or make changes to your account.</p>
+                                        <button class="btn btn-primary m-1">Enable</button>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between py-3 border-top">
                                         <div>

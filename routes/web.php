@@ -81,7 +81,8 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middle
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('auth');
 // Show user profile
 Route::get('/admin/user-profile', [AdminController::class, 'userprofile'])->name('user-profile')->middleware('auth');
-
+// Handle user profile update
+Route::post('/admin/update-user-details', [AdminController::class, 'updateUserDetails'])->name('update-user-details')->middleware('auth');
 
 
 // ======================== Extra Routes ========================

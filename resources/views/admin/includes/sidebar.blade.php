@@ -32,9 +32,19 @@
                         <span class="hide-menu">Dashbaord</span>
                     </a>
                 </li>
+                <!-- Show only if user role is admin -->
+                @if (Auth::user()->role == 'admin')
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Create</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="#" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-photo-up"></i>
+                        </span>
+                        <span class="hide-menu">Add New Photo</span>
+                    </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="#" aria-expanded="false">
@@ -114,6 +124,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Other Options</span>
@@ -123,7 +134,7 @@
                         <span>
                             <i class="ti ti-user-circle"></i>
                         </span>
-                        <span class="hide-menu">User Profile</span>
+                        <span class="hide-menu">My Profile</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

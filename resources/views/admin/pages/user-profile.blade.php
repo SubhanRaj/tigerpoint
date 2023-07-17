@@ -136,7 +136,7 @@
                                                 </div>
                                                 <div class="mb-4">
                                                     <label for="phone" class="form-label fw-semibold">Phone</label>
-                                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="+91 12345 65478">
+                                                    <input type="text" class="form-control" id="phone" name="phone" value="{{auth()->user()->phone}}" placeholder="+91 12345 65478">
                                                     @error('phone')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -147,7 +147,7 @@
                                             <div class="col-12">
                                                 <div class="">
                                                     <label for="address" class="form-label fw-semibold">Address</label>
-                                                    <input type="text" class="form-control" id="address" name="address" placeholder="814 Howard Street, 120065, India">
+                                                    <input type="text" class="form-control" id="address" name="address" value="{{auth()->user()->address}}" placeholder="814 Howard Street, 120065, India">
                                                     @error('address')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>

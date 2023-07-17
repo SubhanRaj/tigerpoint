@@ -28,11 +28,11 @@ class AdminController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'unique:users,email,' . auth()->user()->id],
-            'city' => ['optional', 'string'],
-            'country' => ['optional', 'string'],
-            'mobile' => ['optional', 'string'],
-            'position' => ['optional', 'string'],
-            'address' => ['optional', 'string']
+            'city' => ['nullable', 'string'],
+            'country' => ['nullable', 'string'],
+            'phone' => ['nullable', 'string', 'regex:#^\+[1-9]\d{1,14}$#'], // 'Regex:^\+[1-9]\d{1,14}$' for phone number validation
+            'position' => ['nullable', 'string'],
+            'address' => ['nullable', 'string']
         ]);
 
         $user = auth()->user();
@@ -44,8 +44,8 @@ class AdminController extends Controller
         if ($request->has('country')) {
             $user->country = $request->country;
         }
-        if ($request->has('mobile')) {
-            $user->mobile = $request->mobile;
+        if ($request->has('phone')) {
+            $user->phone = $request->phone;
         }
         if ($request->has('position')) {
             $user->position = $request->position;

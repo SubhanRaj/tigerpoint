@@ -42,7 +42,7 @@ class UserController extends Controller
     {
         return view('admin.auth.login');
     }
-    // Handle user login form data, if user check remember me, then remember user for 30 days 
+    // Handle user login form data with login throttling and token remember
     public function authenticate(Request $request)
     {
         $formfields = $request->validate([
@@ -50,10 +50,21 @@ class UserController extends Controller
             'password' => ['required', 'string'],
         ]);
 
+        $throttles = $this->hasTooManyLoginAttempts($request);
+
+        if ($throttles) {
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+        }
+
         if (auth()->attempt($formfields, $request->remember)) {
             $request->session()->regenerate();
+            $this->clearLoginAttempts($request);
             return redirect()->route('dashboard');
         }
+
+        $this->incrementLoginAttempts($request);
 
         return back()->withErrors([
             'email' => 'Invalid Credentials',

@@ -40,28 +40,28 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
-                                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" placeholder="John Doe" aria-describedby="nameHelp">
+                                <input type="text" class="form-control" id="name" name="name" value="{{old('name')}}" placeholder="John Doe" aria-describedby="nameHelp" required>
                             </div>
                             @error('name')
                                 <div class="invalid-feedback d-block">{{$message}}</div>
                             @enderror
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" placeholder="johndoe@example.com" aria-describedby="emailHelp">
+                                <input type="email" class="form-control" id="email" name="email" value="{{old('email')}}" placeholder="johndoe@example.com" aria-describedby="emailHelp" required>
                                 @error('email')
                                     <div class="invalid-feedback d-block">{{$message}}</div>                                    
                                 @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp">
+                                <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" required>
                                 @error('password')
                                     <div class="invalid-feedback d-block">{{$message}}</div>                                    
                                 @enderror
                             </div>
                             <div class="mb-4">
                                 <label for="confirmpassword" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" aria-describedby="passwordHelp">
+                                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" aria-describedby="passwordHelp" required>
                                 @error('password_confirmation')
                                     <div class="invalid-feedback d-block">{{$message}}</div>
                                 @enderror

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -57,8 +58,28 @@ class AdminController extends Controller
 
         return redirect()->back()->with('success', 'User details updated successfully');
         // if any error or failed to update user details, then redirect back with error message
-        if($request->fails()){
+        if ($request->fails()) {
             return back()->withErrors($request)->withInput();
+        }
+    }
+
+    // handle admin password update
+    public function updateAdminPassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = auth()->user();
+        if (Hash::check($request->current_password, $user->password)) {
+            $user->password = Hash::make($request->password);
+            $user->save();
+            return redirect()->back()->with('success', 'Password updated successfully');
+        } else {
+            return redirect()->back()->withErrors([
+                'current_password' => 'The provided password does not match your current password.',
+            ]);
         }
     }
 }

@@ -112,6 +112,26 @@ class UserController extends Controller
 
         return redirect()->back()->with('success', 'User details updated successfully');
     }
+
+    // Handle user password update
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:6', 'confirmed'],
+        ]);
+
+        $user = auth()->user();
+        if (password_verify($request->current_password, $user->password)) {
+            $user->password = bcrypt($request->password);
+            $user->save();
+            return redirect()->back()->with('success', 'Password updated successfully');
+        } else {
+            return redirect()->back()->withErrors([
+                'current_password' => 'The provided password does not match your current password.',
+            ]);
+        }
+    }
     // Show forgot password form
     public function forgotPassword()
     {

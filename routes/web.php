@@ -80,8 +80,11 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middle
 // take authenticated user to their profile
 Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile')->middleware('auth');
 
-// Update user profile
+// Update user profile update
 Route::post('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.update.profile')->middleware('auth');
+
+// handle user password update
+Route::post('/user/update-password', [UserController::class, 'updatePassword'])->name('user.update.password')->middleware('auth');
 
 // ======================== Admin Routes ========================
 
@@ -91,6 +94,8 @@ Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('adm
 Route::get('/admin/profile', [AdminController::class, 'profile'])->name('profile')->middleware('auth');
 // Handle user profile update
 Route::post('/admin/update-admin-details', [AdminController::class, 'updateAdminDetails'])->name('update-admin-details')->middleware('auth');
+// handle admin password update
+Route::post('/admin/update-admin-password', [AdminController::class, 'updateAdminPassword'])->name('update-admin-password')->middleware('auth');
 
 
 // ======================== Extra Routes ========================

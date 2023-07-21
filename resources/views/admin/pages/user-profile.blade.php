@@ -65,20 +65,38 @@
                                 <div class="card-body p-4">
                                     <h5 class="card-title fw-semibold">Change Password</h5>
                                     <p class="card-subtitle mb-4">To change your password please confirm here</p>
-                                    <form>
-                                        <div class="mb-4">
-                                            <label for="exampleInputPassword1" class="form-label fw-semibold">Current Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your current password">
-                                        </div>
-                                        <div class="mb-4">
-                                            <label for="exampleInputPassword1" class="form-label fw-semibold">New Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your new password">
-                                        </div>
-                                        <div class="">
-                                            <label for="exampleInputPassword1" class="form-label fw-semibold">Confirm Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm your new password">
-                                        </div>
-                                    </form>
+                                    @if(auth()->user()->role == 'admin')
+                                    <form method="POST" action="/admin/update-admin-password">
+                                        @elseif(auth()->user()->role == 'user')
+                                        <form method="POST" action="/user/update-password">
+                                            @endif
+                                            @csrf
+                                            <div class="mb-4">
+                                                <label for="oldPassword" class="form-label fw-semibold">Current Password</label>
+                                                <input type="password" class="form-control" name="oldPassword" id="oldPassword" placeholder="Enter your current password">
+                                                @error('oldPassword')
+                                                <div class="invalid-feedback d-block">{{$message}}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="mb-4">
+                                                <label for="newPassword" class="form-label fw-semibold">New Password</label>
+                                                <input type="password" class="form-control" placeholder="Enter your new password" name="newPassword" id="newPassword">
+                                                @error('newPassword')
+                                                <div class="invalid-feedback d-block">{{$message}}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="">
+                                                <label for="newPasswordConfirmation" class="form-label fw-semibold">Confirm Password</label>
+                                                <input type="password" class="form-control" placeholder="Confirm your new password" name="newPassword_confirmation" id="newPasswordConfirmation">
+                                                @error('newPassword_confirmation')
+                                                <div class="invalid-feedback d-block">{{$message}}</div>
+                                                @enderror
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center my-4 gap-3">
+                                                <input type="submit" value=" Save " class="btn btn-primary">
+                                                <input type="reset" value="Cancel" class="btn btn-light-danger text-danger">
+                                            </div>
+                                        </form>
                                 </div>
                             </div>
                         </div>

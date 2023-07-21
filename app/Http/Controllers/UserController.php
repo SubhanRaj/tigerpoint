@@ -118,13 +118,14 @@ class UserController extends Controller
     {
         $request->validate([
             'current_password' => ['required', 'string'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'newPassword' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
 
         $user = auth()->user();
         if (password_verify($request->current_password, $user->password)) {
             $user->password = bcrypt($request->password);
             $user->save();
+            // use x-alert to show alert message
             return redirect()->back()->with('success', 'Password updated successfully');
         } else {
             return redirect()->back()->withErrors([

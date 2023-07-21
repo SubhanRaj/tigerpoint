@@ -72,26 +72,26 @@
                                             @endif
                                             @csrf
                                             <div class="mb-4">
-                                                <label for="oldPassword" class="form-label fw-semibold">Current Password</label>
-                                                <input type="password" class="form-control" name="oldPassword" id="oldPassword" placeholder="Enter your current password">
-                                                @error('oldPassword')
-                                                <div class="invalid-feedback d-block">{{$message}}</div>
-                                                @enderror
+                                                <label for="current_Password" class="form-label fw-semibold">Current Password</label>
+                                                <input type="password" class="form-control" name="current_password" id="current_password" placeholder="Enter your current password" required>
                                             </div>
+                                            @error('current_password')
+                                            <div class="invalid-feedback d-block">{{$message}}</div>
+                                            @enderror
                                             <div class="mb-4">
                                                 <label for="newPassword" class="form-label fw-semibold">New Password</label>
-                                                <input type="password" class="form-control" placeholder="Enter your new password" name="newPassword" id="newPassword">
-                                                @error('newPassword')
-                                                <div class="invalid-feedback d-block">{{$message}}</div>
-                                                @enderror
+                                                <input type="password" class="form-control" placeholder="Enter your new password" name="newPassword" id="newPassword" required>
                                             </div>
+                                            @error('newPassword')
+                                            <div class="invalid-feedback d-block">{{$message}}</div>
+                                            @enderror
                                             <div class="">
                                                 <label for="newPasswordConfirmation" class="form-label fw-semibold">Confirm Password</label>
-                                                <input type="password" class="form-control" placeholder="Confirm your new password" name="newPassword_confirmation" id="newPasswordConfirmation">
-                                                @error('newPassword_confirmation')
-                                                <div class="invalid-feedback d-block">{{$message}}</div>
-                                                @enderror
+                                                <input type="password" class="form-control" placeholder="Confirm your new password" name="newPassword_confirmation" id="newPasswordConfirmation" required>
                                             </div>
+                                            @error('newPassword_confirmation')
+                                            <div class="invalid-feedback d-block">{{$message}}</div>
+                                            @enderror
                                             <div class="d-flex align-items-center justify-content-center my-4 gap-3">
                                                 <input type="submit" value=" Save " class="btn btn-primary">
                                                 <input type="reset" value="Cancel" class="btn btn-light-danger text-danger">

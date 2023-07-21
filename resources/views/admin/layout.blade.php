@@ -23,6 +23,7 @@
         @include('admin.includes.search')
         <!--  Let user choose dark or light mode -->
         @include('admin.includes.theme-button')
+
     </div>
     @else
     @yield('content')

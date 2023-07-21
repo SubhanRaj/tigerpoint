@@ -79,6 +79,9 @@ Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middle
 // take authenticated user to their profile
 Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile')->middleware('auth');
 
+// Update user profile
+Route::post('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.update.profile')->middleware('auth');
+
 // ======================== Admin Routes ========================
 
 // take authenticated user to dashboard after login

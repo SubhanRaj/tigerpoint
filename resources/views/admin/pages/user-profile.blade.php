@@ -85,86 +85,91 @@
                                 <div class="card-body p-4">
                                     <h5 class="card-title fw-semibold">Personal Details</h5>
                                     <p class="card-subtitle mb-4">To change your personal detail , edit and save from here</p>
+                                    <!-- seprate form action url for admin and user -->
+                                    @if (auth()->user()->role == 'admin')
                                     <form method="post" action="/admin/update-admin-details">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <div class="mb-4">
-                                                    <label for="name" class="form-label fw-semibold">Your Name</label>
-                                                    <input type="text" class="form-control" id="name" name="name" value="{{auth()->user()->name}}">
-                                                    @error('name')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
+                                        @elseif (auth()->user()->role == 'user')
+                                        <form method="post" action="/user/update-profile">
+                                            @endif
+                                            @csrf
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="mb-4">
+                                                        <label for="name" class="form-label fw-semibold">Your Name</label>
+                                                        <input type="text" class="form-control" id="name" name="name" value="{{auth()->user()->name}}">
+                                                        @error('name')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="city" class="form-label fw-semibold">City</label>
+                                                        <input type="text" class="form-control" id="city" name="city" value="{{auth()->user()->city}}" placeholder="Enter your city">
+                                                        @error('city')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="position" class="form-label fw-semibold">Current Position</label>
+                                                        <input type="text" class="form-control" id="position" name="position" value="{{auth()->user()->position}}" placeholder="Enter your current position">
+                                                        @error('position')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
                                                 </div>
-                                                <div class="mb-4">
-                                                    <label for="city" class="form-label fw-semibold">City</label>
-                                                    <input type="text" class="form-control" id="city" name="city" value="{{auth()->user()->city}}" placeholder="Enter your city">
-                                                    @error('city')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
+                                                <div class="col-lg-6">
+                                                    <div class="mb-4">
+                                                        <label for="email" class="form-label fw-semibold">Email</label>
+                                                        <input type="email" class="form-control" id="email" name="email" value="{{auth()->user()->email}}">
+                                                        @error('email')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="countyr" class="form-label fw-semibold">Country</label>
+                                                        <input type="text" class="form-control" id="country" name="country" value="{{auth()->user()->country}}" placeholder="Enter your country">
+                                                        @error('country')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                    <div class="mb-4">
+                                                        <label for="phone" class="form-label fw-semibold">Phone</label>
+                                                        <input type="text" class="form-control" id="phone" name="phone" value="{{auth()->user()->phone}}" placeholder="+91 12345 65478">
+                                                        @error('phone')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
                                                 </div>
-                                                <div class="mb-4">
-                                                    <label for="position" class="form-label fw-semibold">Current Position</label>
-                                                    <input type="text" class="form-control" id="position" name="position" value="{{auth()->user()->position}}" placeholder="Enter your current position">
-                                                    @error('position')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
+                                                <div class="col-12">
+                                                    <div class="">
+                                                        <label for="address" class="form-label fw-semibold">Address</label>
+                                                        <input type="text" class="form-control" id="address" name="address" value="{{auth()->user()->address}}" placeholder="814 Howard Street, 120065, India">
+                                                        @error('address')
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                        @enderror
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div class="d-flex align-items-center justify-content-end mt-4 gap-3">
+                                                        <input type="submit" value=" Save " class="btn btn-primary">
+                                                        <input type="reset" value="Cancel" class="btn btn-light-danger text-danger">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-4">
-                                                    <label for="email" class="form-label fw-semibold">Email</label>
-                                                    <input type="email" class="form-control" id="email" name="email" value="{{auth()->user()->email}}">
-                                                    @error('email')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for="countyr" class="form-label fw-semibold">Country</label>
-                                                    <input type="text" class="form-control" id="country" name="country" value="{{auth()->user()->country}}" placeholder="Enter your country">
-                                                    @error('country')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label for="phone" class="form-label fw-semibold">Phone</label>
-                                                    <input type="text" class="form-control" id="phone" name="phone" value="{{auth()->user()->phone}}" placeholder="+91 12345 65478">
-                                                    @error('phone')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="">
-                                                    <label for="address" class="form-label fw-semibold">Address</label>
-                                                    <input type="text" class="form-control" id="address" name="address" value="{{auth()->user()->address}}" placeholder="814 Howard Street, 120065, India">
-                                                    @error('address')
-                                                    <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
-                                                    </span>
-                                                    @enderror
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-                                                <div class="d-flex align-items-center justify-content-end mt-4 gap-3">
-                                                    <input type="submit" value=" Save " class="btn btn-primary">
-                                                    <input type="reset" value="Cancel" class="btn btn-light-danger text-danger">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                        </form>
                                 </div>
                             </div>
                         </div>

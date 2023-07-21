@@ -56,5 +56,9 @@ class AdminController extends Controller
         $user->save();
 
         return redirect()->back()->with('success', 'User details updated successfully');
+        // if any error or failed to update user details, then redirect back with error message
+        if($request->fails()){
+            return back()->withErrors($request)->withInput();
+        }
     }
 }

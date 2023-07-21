@@ -6,12 +6,14 @@
             <div class="row align-items-center">
                 <div class="col-9">
                     <h4 class="fw-semibold mb-8">My Profile</h4>
+                    @if (auth()->user()->role == 'admin')
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a class="text-muted " href="/admin/dashbaord">Dashboard</a></li>
                             <li class="breadcrumb-item" aria-current="page">User Profile</li>
                         </ol>
                     </nav>
+                    @endif
                 </div>
                 <div class="col-3">
                     <div class="text-center mb-n5">
@@ -83,7 +85,7 @@
                                 <div class="card-body p-4">
                                     <h5 class="card-title fw-semibold">Personal Details</h5>
                                     <p class="card-subtitle mb-4">To change your personal detail , edit and save from here</p>
-                                    <form method="post" action="/admin/update-user-details">
+                                    <form method="post" action="/admin/update-admin-details">
                                         @csrf
                                         <div class="row">
                                             <div class="col-lg-6">

@@ -15,11 +15,17 @@
                     <li><a href="/categories">Categories</a></li>
                     <li><a href="/gallery">Gallery</a></li>
                     @auth
-                    <li><a href="/admin/dashboard">Dashboard</a></li>
-                    <li><a href="{{url ('/logout')}}">Logout</a></li>
+                        <!-- Show admin dashboard if authenticated user is admin else show user dashboard -->
+                        @if(auth()->user()->role == 'admin')
+                            <li><a href="/admin/dashboard">Dashboard</a></li>
+                            <li><a href="{{ url('/logout') }}">Logout</a></li>
+                        @elseif (auth()->user()->role == 'user')
+                            <li><a href="/user/profile">Profile</a></li>
+                            <li><a href="{{ url('/logout') }}">Logout</a></li>
+                        @endif
                     @else
-                    <li><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Register</a></li>
                     @endauth
                 </ul>
             </div>

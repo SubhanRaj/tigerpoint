@@ -75,14 +75,18 @@ Route::get('/forgot-password', [UserController::class, 'forgotPassword'])->name(
 // handle logout
 Route::get('/logout', [UserController::class, 'logout'])->name('logout')->middleware('auth');
 
+// ======================== User Routes ========================
+// take authenticated user to their profile
+Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile')->middleware('auth');
+
 // ======================== Admin Routes ========================
 
 // take authenticated user to dashboard after login
-Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('dashboard')->middleware('auth');
-// Show user profile
-Route::get('/admin/user-profile', [AdminController::class, 'userprofile'])->name('user-profile')->middleware('auth');
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('auth');
+// Show admin profile
+Route::get('/admin/profile', [AdminController::class, 'profile'])->name('profile')->middleware('auth');
 // Handle user profile update
-Route::post('/admin/update-user-details', [AdminController::class, 'updateUserDetails'])->name('update-user-details')->middleware('auth');
+Route::post('/admin/update-admin-details', [AdminController::class, 'updateAdminDetails'])->name('update-admin-details')->middleware('auth');
 
 
 // ======================== Extra Routes ========================

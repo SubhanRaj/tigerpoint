@@ -14,6 +14,8 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav scroll-sidebar" data-simplebar>
             <ul id="sidebarnav">
+                <!-- Show only if user role is admin -->
+                @if (Auth::user()->role == 'admin')
                 <!-- ============================= -->
                 <!-- Home -->
                 <!-- ============================= -->
@@ -32,8 +34,7 @@
                         <span class="hide-menu">Dashbaord</span>
                     </a>
                 </li>
-                <!-- Show only if user role is admin -->
-                @if (Auth::user()->role == 'admin')
+
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
                     <span class="hide-menu">Create</span>
@@ -124,13 +125,13 @@
                         </li>
                     </ul>
                 </li>
-                @endif
+
                 <li class="nav-small-cap">
                     <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                    <span class="hide-menu">Other Options</span>
+                    <span class="hide-menu">Other Option</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="/admin/user-profile" aria-expanded="false">
+                    <a class="sidebar-link" href="/admin/profile" aria-expanded="false">
                         <span>
                             <i class="ti ti-user-circle"></i>
                         </span>
@@ -145,6 +146,28 @@
                         <span class="hide-menu">Log Out</span>
                     </a>
                 </li>
+                @elseif (Auth::user()->role == 'user')
+                <li class="nav-small-cap">
+                    <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                    <span class="hide-menu">User Profile</span>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/user/profile" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-user-circle"></i>
+                        </span>
+                        <span class="hide-menu">My Profile</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{url ('/logout')}}" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-logout"></i>
+                        </span>
+                        <span class="hide-menu">Log Out</span>
+                    </a>
+                </li>
+                @endif
                 <!-- <li class="sidebar-item">
                     <a class="sidebar-link has-arrow" href="#" aria-expanded="false">
                         <span class="d-flex">

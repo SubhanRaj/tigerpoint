@@ -23,6 +23,7 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
+            'role' => ['nullable', 'string', 'max:255', 'in:user,admin', 'default:user'],
         ]);
 
         // Hash user password
@@ -33,7 +34,7 @@ class UserController extends Controller
         
         // login the user, start session and redirect to dashboard
         auth()->login($user);
-        return redirect()->route('dashboard');
+        return redirect()->route('user.profile');
       
     }
 
@@ -48,20 +49,31 @@ class UserController extends Controller
         $formfields = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required', 'string'],
+            'role' => ['nullable', 'string', 'max:255', 'in:user,admin', 'default:user'],
         ]);
 
+        //  check if user's role is admin, if yes, then redirect to admin dashboard or to user dashboard, also if user is already logged in, then redirect to dashboard and if user check remember me, then remember user for 30 days
         if (auth()->attempt($formfields, $request->remember)) {
-            $request->session()->regenerate();
-            return redirect()->route('dashboard');
+            if (auth()->user()->role == 'admin') {
+                return redirect()->route('admin.dashboard');
+            } else {
+                return redirect()->route('user.profile');
+            }
+        } else {
+            return redirect()->back()->with('error', 'Invalid login details');
         }
-
-        return back()->withErrors([
-            'email' => 'Invalid Credentials',
-        ]);
+    
     }
-    
-    
 
+    // Show user profile
+    public function profile()
+    {
+        if(auth()->user()->role == 'user'){
+            return view('admin.pages.user-profile');
+        }else{
+            return redirect()->route('login');
+        }
+    }
     // Show forgot password form
     public function forgotPassword()
     {

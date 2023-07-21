@@ -17,6 +17,7 @@ use App\Http\Controllers\AdminController;
 |
 */
 
+// ======================== Views Routes ========================
 // Home Route
 Route::get('/', [ViewsController::class,'index'])-> name('home');
 

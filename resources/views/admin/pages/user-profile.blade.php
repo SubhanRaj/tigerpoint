@@ -24,6 +24,7 @@
         </div>
     </div>
     <div class="card">
+        @if(auth()->user()->role == 'admin')
         <ul class="nav nav-pills user-profile-tab" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link position-relative rounded-0 active d-flex align-items-center justify-content-center bg-transparent fs-3 py-4" id="pills-account-tab" data-bs-toggle="pill" data-bs-target="#pills-account" type="button" role="tab" aria-controls="pills-account" aria-selected="true">
@@ -38,6 +39,7 @@
                 </button>
             </li>
         </ul>
+        @endif
         <div class="card-body">
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-account" role="tabpanel" aria-labelledby="pills-account-tab" tabindex="0">
@@ -45,7 +47,7 @@
                         <div class="col-lg-6 d-flex align-items-stretch">
                             <div class="card w-100 position-relative overflow-hidden">
                                 <div class="card-body p-4">
-                                    <h5 class="card-title fw-semibold">Change Profile</h5>
+                                    <h5 class="card-title fw-semibold">Change Profile Picture</h5>
                                     <p class="card-subtitle mb-4">Change your profile picture from here</p>
                                     <div class="text-center">
                                         <img src="{{asset('images/admin/profile/user-1.jpg')}}" alt="" class="img-fluid rounded-circle" width="120" height="120">

@@ -177,6 +177,7 @@
                         </div>
                     </div>
                 </div>
+                @if(auth()->user()->role == 'admin')
                 <div class="tab-pane fade" id="pills-security" role="tabpanel" aria-labelledby="pills-security-tab" tabindex="0">
                     <div class="row">
                         <div class="col-lg-8">
@@ -256,6 +257,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </div>

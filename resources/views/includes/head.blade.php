@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <title>Tiger Point</title>
+    <title> @yield('title') || {{ config('app.name') }} || Photo Journal & Blog</title>
     <meta name="description" content="AXONE - Personal Blog & Photo Gallery HTML Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- General CSS Settings -->

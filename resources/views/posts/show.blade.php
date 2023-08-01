@@ -1,3 +1,7 @@
+@section('title')
+{{ $post->title}}
+@endsection
+
 <x-layout>
     <div class="lx-single-post">
         <div class="lx-single-post-header">

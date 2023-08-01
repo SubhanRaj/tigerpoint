@@ -1,3 +1,7 @@
+@section('title')
+{{'Gallery'}}
+@endsection
+
 <x-layout>
     <div class="lx-g3-f" data-gallery="0">
         <div class="lx-gallery" data-bg="images/post7.jpg">

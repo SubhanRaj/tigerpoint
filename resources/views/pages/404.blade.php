@@ -1,3 +1,6 @@
+@section('title')
+{{'Page Not Found'}}
+@endsection
 <x-layout>
     <div class="lx-404">
         <h1>404</h1>

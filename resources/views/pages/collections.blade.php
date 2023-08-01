@@ -1,3 +1,6 @@
+@section('title')
+{{'Collections'}}
+@endsection
 <x-layout>
     <div class="lx-personal-card">
         <h1>Collection</h1>

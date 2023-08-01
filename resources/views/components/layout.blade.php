@@ -1,17 +1,17 @@
 <!-- Default Layout -->
 <!DOCTYPE html>
-<html lang="en_IN">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }} ">
 <!-- head -->
 @include('includes.head')
 <!-- Body -->
 <body>
 <!-- Loader -->
-<div class="lx-loader">
-    <div>
-        <h1>Tiger Point v1.0</h1>
-        <img src="{{asset('images/oval.svg')}}" alt="Loading" />
-        <p>Designed & Developed by SIBIN Tech Solutions</p>
-    </div>
+<div class=" lx-loader">
+<div>
+    <h1>Tiger Point v1.0</h1>
+    <img src="{{asset('images/oval.svg')}}" alt="Loading" />
+    <p>Designed & Developed by SIBIN Tech Solutions</p>
+</div>
 </div>
 <!-- Background -->
 <div class="lx-background">
@@ -42,4 +42,5 @@
 <!-- Scripts -->
 @include('includes.scripts')
 </body>
+
 </html>

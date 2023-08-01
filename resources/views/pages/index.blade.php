@@ -1,5 +1,9 @@
 <!-- use layout.blade.php as master layout -->
+@section('title') 
+{{'Home'}}
+@endsection
 <x-layout>
+
     <div class="lx-personal-card">
         <div class="lx-personal-img">
             <img src="{{asset('images/profile3.jpg')}}">

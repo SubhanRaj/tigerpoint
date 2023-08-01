@@ -1,3 +1,6 @@
+@section('title')
+{{'About Me'}}
+@endsection
 <x-layout>
     <div class="lx-single-post">
         <div class="lx-single-post-header">

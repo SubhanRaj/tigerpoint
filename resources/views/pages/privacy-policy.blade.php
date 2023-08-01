@@ -1,3 +1,6 @@
+@section('title')
+{{'Terms & Privacy Policy'}}
+@endsection
 <x-layout>
     <div class="lx-single-post">
         <div class="lx-single-post-header">

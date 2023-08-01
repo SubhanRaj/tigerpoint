@@ -2,8 +2,8 @@
     <!--  Title -->
     @auth
     if (Auth::user()->role == 'admin')
-    <title> @yield('title') || Admin Dashbaord {{ config('app.name') }}</title>
-    @else
+    <title> @yield('title') || Admin Dashbaord || {{ config('app.name') }}</title>
+    @elseif (Auth::user()->role == 'user')
     <title> User Profile || {{ config('app.name') }} || Photo Journal & Blog</title>
     @endauth
     <!--  Required Meta Tag -->

@@ -1,6 +1,6 @@
 @extends('admin.layout')
 @section('title')
-{{'Dashbaord'}}
+{{'Dashboard'}}
 @endsection
 @section('content')
 <div class="container-fluid">

@@ -78,6 +78,12 @@ class UserController extends Controller
     }
 
     // Handle user profile update
+    /**
+     * Update the user's profile information.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function updateProfile(Request $request)
     {
         $request->validate([

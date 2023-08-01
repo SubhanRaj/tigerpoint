@@ -1,6 +1,11 @@
 <head>
     <!--  Title -->
-    <title>Admin || Tiger Point</title>
+    @auth
+    if (Auth::user()->role == 'admin')
+    <title> @yield('title') || Admin Dashbaord {{ config('app.name') }}</title>
+    @else
+    <title> User Profile || {{ config('app.name') }} || Photo Journal & Blog</title>
+    @endauth
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

@@ -1,4 +1,7 @@
 @extends('admin.layout')
+@section('title')
+{{'Dashbaord'}}
+@endsection
 @section('content')
 <div class="container-fluid">
     <div class="row">
@@ -8,7 +11,7 @@
                     <div class="border border-2 border-primary rounded-circle">
                         <img src="{{asset('images/admin/profile/user-1.jpg')}}" class="rounded-circle m-1" alt="user1" width="60" />
                     </div>
-                    <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"> 3 <span class="visually-hidden">unread messages</span> -->  </span>
+                    <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary"> 3 <span class="visually-hidden">unread messages</span> --> </span>
                 </div>
                 <div>
                     <h3 class="fw-semibold">Hi, <span class="text-dark">{{ auth()->user()->name}}</span></h3>

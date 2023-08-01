@@ -1,4 +1,7 @@
 @extends('admin.layout')
+@section('title')
+{{'Profile'}}
+@endsection
 @section('content')
 <div class="container-fluid">
     <div class="card bg-light-info shadow-none position-relative overflow-hidden">

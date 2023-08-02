@@ -1,6 +1,12 @@
 @extends('admin.layout')
 @section('title')
-{{'Profile'}}
+@auth
+@if (auth()->user()->role == 'admin')
+{{'Admin Profile'}} || Admin Dashbaord || {{ config('app.name') }}
+@elseif (auth()->user()->role == 'user')
+{{auth()->user()->name}}'s Profile
+@endif
+@endauth
 @endsection
 @section('content')
 <div class="container-fluid">

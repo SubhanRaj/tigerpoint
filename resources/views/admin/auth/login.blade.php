@@ -1,5 +1,8 @@
 <!-- USe layout from views/admin/components/layout.blade.php to create basic layout for login page using slots -->
 @extends('admin.layout')
+@section('title')
+{{'Login'}}
+@endsection
 @section('content')
 <div class="position-relative overflow-hidden radial-gradient min-vh-100">
     <div class="position-relative z-index-5">

@@ -1,11 +1,14 @@
 <head>
     <!--  Title -->
-    @auth
-    if (Auth::user()->role == 'admin')
+    <title> @yield('title') || {{ config('app.name') }}</title>
+    <!-- only use below code if there is someone logged in -->
+    @if (Auth::user())
+    @if (Auth::user()->role == 'admin')
     <title> @yield('title') || Admin Dashbaord || {{ config('app.name') }}</title>
     @elseif (Auth::user()->role == 'user')
     <title> User Profile || {{ config('app.name') }} || Photo Journal & Blog</title>
-    @endauth
+    @endif
+    @endif
     <!--  Required Meta Tag -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />

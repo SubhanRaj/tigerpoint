@@ -76,7 +76,7 @@
                     <span class="hide-menu">Manage</span>
                 </li>
                 <li class="sidebar-item">
-                    <a href="#" class="sidebar-link">
+                    <a href="/admin/manage-posts" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-article"></i>
                         </div>

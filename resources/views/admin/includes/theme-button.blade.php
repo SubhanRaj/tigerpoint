@@ -3,7 +3,7 @@
 </button>
 <div class="offcanvas offcanvas-end customizer" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" data-simplebar="">
     <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
-        <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">Theme Settings</h4>
+        <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">Dashbaord Settings</h4>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body p-4">

@@ -97,6 +97,9 @@ Route::post('/admin/update-admin-details', [AdminController::class, 'updateAdmin
 // handle admin password update
 Route::post('/admin/update-admin-password', [AdminController::class, 'updateAdminPassword'])->name('update-admin-password')->middleware('auth');
 
+// ======================== Admin Posts Routes ========================
+// Show all posts
+Route::get('/admin/manage-posts', [PostsController::class, 'index'])->name('show-all-posts')->middleware('auth');
 
 // ======================== Extra Routes ========================
 // If a route does not exist or not found, return 404 page

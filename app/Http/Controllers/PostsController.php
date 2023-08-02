@@ -13,7 +13,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        // return post view page in admin
+        return view('admin.posts.manage');
     }
 
     /**

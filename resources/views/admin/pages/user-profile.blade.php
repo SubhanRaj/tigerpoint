@@ -18,7 +18,7 @@
                     @if (auth()->user()->role == 'admin')
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a class="text-muted " href="/admin/dashbaord">Dashboard</a></li>
+                            <li class="breadcrumb-item"><a class="text-muted " href="/admin/dashboard">Dashboard</a></li>
                             <li class="breadcrumb-item" aria-current="page">User Profile</li>
                         </ol>
                     </nav>

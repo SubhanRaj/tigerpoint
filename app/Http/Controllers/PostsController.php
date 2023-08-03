@@ -14,7 +14,9 @@ class PostsController extends Controller
     public function index()
     {
         // return post view page in admin
-        return view('admin.posts.manage');
+        return view('admin.posts.manage',[
+            'posts' => Posts::Paginate(10)
+        ]);
     }
 
     /**

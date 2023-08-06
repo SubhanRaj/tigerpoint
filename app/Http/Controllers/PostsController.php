@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Posts;
 use App\Http\Requests\StorePostsRequest;
 use App\Http\Requests\UpdatePostsRequest;
+use PhpParser\Node\Stmt\Return_;
 
 class PostsController extends Controller
 {
@@ -14,7 +15,7 @@ class PostsController extends Controller
     public function index()
     {
         // return post view page in admin
-        return view('admin.posts.manage',[
+        return view('admin.posts.manage', [
             'posts' => Posts::Paginate(10)
         ]);
     }
@@ -47,9 +48,10 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Posts $posts)
+    public function edit($id)
     {
-        //
+        $post = Posts::findOrFail($id);
+        return view('admin.posts.edit', compact('post'));
     }
 
     /**

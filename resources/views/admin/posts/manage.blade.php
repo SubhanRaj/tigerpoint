@@ -119,7 +119,7 @@
                                     <a class="dropdown-item d-flex align-items-center gap-3" href="/posts/{{$post->url_slug}}" target="_blank"><i class="fs-4 ti ti-external-link"></i>View</a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="fs-4 ti ti-edit"></i>Edit</a>
+                                    <a class="dropdown-item d-flex align-items-center gap-3" href="/admin/edit-post/{{$post->id}}"><i class="fs-4 ti ti-edit"></i>Edit</a>
                                 </li>
                                 <li>
                                     <a class="dropdown-item d-flex align-items-center gap-3" href="#"><i class="fs-4 ti ti-trash"></i>Delete</a>

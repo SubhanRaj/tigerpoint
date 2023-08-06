@@ -101,11 +101,17 @@ Route::post('/admin/update-admin-password', [AdminController::class, 'updateAdmi
 // Show all posts
 Route::get('/admin/manage-posts', [PostsController::class, 'index'])->name('show-all-posts')->middleware('auth');
 
+// Show post edit form
+Route::get('/admin/edit-post/{id}', [PostsController::class, 'edit'])->name('edit-post')->middleware('auth');
+
+
 // ======================== Extra Routes ========================
 // If a route does not exist or not found, return 404 page
 Route::fallback(function () {
     return view('pages.404');
 });
+
+
 
 
 

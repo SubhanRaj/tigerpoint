@@ -23,44 +23,43 @@
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card border-bottom border-info">
-                        <a href="/admin/manage-posts">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="fs-7">
-                                            {{DB::table('posts')->count()}}
-                                        </h2>
-                                        <h6 class="fw-medium text-info mb-0">Current Posts</h6>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="text-info display-6"><i class="ti ti-article"></i></span>
-                                    </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card rounded-3 card-hover border-bottom border-info">
+                        <a href="/admin/manage-posts" class="stretched-link"></a>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h2 class="fs-7">
+                                        {{DB::table('posts')->count()}}
+                                    </h2>
+                                    <h6 class="fw-medium text-info mb-0">Total Posts</h6>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="text-info display-6"><i class="ti ti-article"></i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="card border-bottom border-info">
-                        <a href="/admin/manage-posts">
-                            <div class="card-body">
-                                <div class="d-flex align-items-center">
-                                    <div>
-                                        <h2 class="fs-7">
-                                            {{DB::table('users')->count()}}
-                                        </h2>
-                                        <h6 class="fw-medium text-info mb-0">Total Users</h6>
-                                    </div>
-                                    <div class="ms-auto">
-                                        <span class="text-info display-6"><i class="ti ti-users"></i></span>
-                                    </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card rounded-3 card-hover border-bottom border-success">
+                        <a href="/admin/manage-users" class="stretched-link"></a>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <div>
+                                    <h2 class="fs-7">
+                                        {{DB::table('users')->count()}}
+                                    </h2>
+                                    <h6 class="fw-medium text-info mb-0">Current Users</h6>
+                                </div>
+                                <div class="ms-auto">
+                                    <span class="text-info display-6"><i class="ti ti-users"></i></span>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

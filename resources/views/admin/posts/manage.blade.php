@@ -62,9 +62,7 @@
                             <div class="ms-3">
                                 <h6 class="fs-4 fw-semibold mb-0">
                                     <!-- get post id from database -->
-                                    {{
-                                        $post->id
-                                    }}
+                                    {{$post->id}}
                                 </h6>
                             </div>
                         </div>
@@ -78,9 +76,7 @@
                     <td>
                         <p class="mb-0 fw-normal">
                             <!-- Show published date from database -->
-                            {{
-                                $post->created_at->format('d M Y')
-                            }}
+                            {{$post->created_at->format('d M Y')}}
                         </p>
                     </td>
                     <td>
@@ -131,7 +127,6 @@
                 @endforeach
             </tbody>
         </table>
-        
     </div>
 </div>
 @endsection

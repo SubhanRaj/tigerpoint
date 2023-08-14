@@ -12,6 +12,12 @@
 <script src="{{asset('js/admin/dashboard.js')}}"></script>
 <script src="{{asset('libs/owl.carousel/dist/owl.carousel.min.js')}}"></script>
 <script src="{{asset('libs/apexcharts/dist/apexcharts.min.js')}}"></script>
+<script src="{{asset('libs/ckeditor/ckeditor.js')}}"></script>
+
+<!-- CKEditor -->
+<!-- <script>
+    CKEDITOR.replace('long_description');
+</script> -->
 <!-- Theme Change-->
 <script>
     // Get the user's theme preference from localStorage

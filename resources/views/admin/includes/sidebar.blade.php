@@ -40,11 +40,19 @@
                     <span class="hide-menu">Create</span>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="#" aria-expanded="false">
+                    <a class="sidebar-link" href="/admin/upload-photo" aria-expanded="false">
                         <span>
-                            <i class="ti ti-photo-up"></i>
+                            <i class="ti ti-photo-plus"></i>
                         </span>
-                        <span class="hide-menu">Add New Photo</span>
+                        <span class="hide-menu">Add New Image</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="/admin/new-blog" aria-expanded="false">
+                        <span>
+                            <i class="ti ti-file-pencil"></i>
+                        </span>
+                        <span class="hide-menu">Write New Blog</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -52,7 +60,7 @@
                         <span>
                             <i class="ti ti-file-pencil"></i>
                         </span>
-                        <span class="hide-menu">Write New Blog</span>
+                        <span class="hide-menu">Create New Gallery</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
@@ -76,11 +84,27 @@
                     <span class="hide-menu">Manage</span>
                 </li>
                 <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-photo-up"></i>
+                        </div>
+                        <span class="hide-menu">Image Uploads</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
                     <a href="/admin/manage-posts" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-article"></i>
                         </div>
-                        <span class="hide-menu">Posts</span>
+                        <span class="hide-menu">Blog Posts</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-album"></i>
+                        </div>
+                        <span class="hide-menu">Gallery</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

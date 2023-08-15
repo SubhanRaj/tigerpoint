@@ -11,14 +11,33 @@
 <!-- Dashboard JS Files -->
 <script src="{{asset('js/admin/dashboard.js')}}"></script>
 <script src="{{asset('libs/owl.carousel/dist/owl.carousel.min.js')}}"></script>
-<script src="{{asset('libs/apexcharts/dist/apexcharts.min.js')}}"></script>
 <script src="{{asset('libs/ckeditor/ckeditor.js')}}"></script>
 
 <!-- CKEditor -->
-<!-- <script>
-    CKEDITOR.replace('long_description');
-</script> -->
-<!-- Theme Change-->
+<script>
+    ClassicEditor
+        .create(document.querySelector('#long_description'))
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+<script>
+    $(document).ready(function() {
+        // Fetch quote
+        $.ajax({
+            method: 'GET',
+            url: '{{ route('get-quote')}}',
+            success: function(result) {
+                $('#quoteSpan').text(result.quote);
+            },
+            error: function(jqXHR) {
+                console.error('Error: ', jqXHR.responseText);
+            }
+        });
+    });
+</script>
+
+
 <script>
     // Get the user's theme preference from localStorage
     var theme = localStorage.getItem('theme');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Http;
 
 class AdminController extends Controller
 {
@@ -81,5 +82,20 @@ class AdminController extends Controller
                 'current_password' => 'The provided password does not match your current password.',
             ]);
         }
+    }
+
+    // show quote on admin dashboard
+    public function getQuote()
+    {
+        $category = 'inspirational'; 
+        $response = Http::withHeaders([
+            'X-Api-Key' => 'xOTB3ElmNlzpHsqO1Ob63A==JOpazoDZNHnxQ0MV',
+        ])->get('https://api.api-ninjas.com/v1/quotes', [
+            'category' => $category,
+        ]);
+
+        $quote = $response->json()[0]['quote'] ?? "No quote available"; // Get the first quote or a default message
+
+        return response()->json(['quote' => $quote]);
     }
 }

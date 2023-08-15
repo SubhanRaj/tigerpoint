@@ -15,7 +15,8 @@
                 </div>
                 <div>
                     <h3 class="fw-semibold">Hi, <span class="text-dark">{{ auth()->user()->name}}</span></h3>
-                    <span>Cheers, and happy activities -{{ date('F d, Y') }}</span>
+                    <span id="quoteSpan">Loading a quote...</span>
+                    <span id="dateSpan"> -{{ date('F d, Y') }}</span>
                 </div>
             </div>
         </div>
@@ -59,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>

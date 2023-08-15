@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ViewsController;
-use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,7 +88,10 @@ Route::post('/user/update-profile', [UserController::class, 'updateProfile'])->n
 Route::post('/user/update-password', [UserController::class, 'updatePassword'])->name('user.update.password')->middleware('auth');
 
 // ======================== Admin Routes ========================
-
+// if get request is made to /admin, redirect to /admin/login 
+Route::get('/admin', function () {
+    return redirect()->route('login');
+});
 // take authenticated user to dashboard after login
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('auth');
 // Show admin profile
@@ -98,6 +102,9 @@ Route::post('/admin/update-admin-details', [AdminController::class, 'updateAdmin
 Route::post('/admin/update-admin-password', [AdminController::class, 'updateAdminPassword'])->name('update-admin-password')->middleware('auth');
 
 // ======================== Admin Posts Routes ========================
+// Create New Post
+Route::get('/admin/new-blog', [PostsController::class, 'createBlog'])->name('new-blog')->middleware('auth');
+
 // Show all posts
 Route::get('/admin/manage-posts', [PostsController::class, 'index'])->name('show-all-posts')->middleware('auth');
 
@@ -105,7 +112,12 @@ Route::get('/admin/manage-posts', [PostsController::class, 'index'])->name('show
 Route::get('/admin/edit-post/{id}', [PostsController::class, 'edit'])->name('edit-post')->middleware('auth');
 
 
+
+
 // ======================== Extra Routes ========================
+
+// Show quote on admin dashboard
+Route::get('/get-quote', [AdminController::class, 'getQuote'])->name('get-quote');
 // If a route does not exist or not found, return 404 page
 Route::fallback(function () {
     return view('pages.404');

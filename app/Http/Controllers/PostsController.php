@@ -23,9 +23,10 @@ class PostsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function createBlog()
     {
-        //
+        //return create post view page in admin
+        return view('admin.posts.create');
     }
 
     /**

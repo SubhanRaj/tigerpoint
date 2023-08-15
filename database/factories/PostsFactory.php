@@ -20,7 +20,7 @@ class PostsFactory extends Factory
             //Create a factory for the posts table, every post should have a title, date published, text content (can be lorem ipsum), and an image, author name,author id, category id, and category name.
 
             'title' => $this->faker->sentence(3),
-            'date_published' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'date_published' => $this->faker->date(),
             'short_description' => $this->faker->paragraph(3),
             'long_description' => $this->faker->paragraph(10),
             'image' => $this->faker->imageUrl(640, 480, 'animals', true),

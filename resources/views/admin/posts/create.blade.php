@@ -29,7 +29,7 @@ Write New Blog
     <div class="card">
         <div class="card-body">
             <div class="row">
-                <form action="" class="form" id="edit-post">
+                <form action="" class="form" id="edit-post" enctype="multipart/form-data">
                     @csrf
                     <input type="hidden" name="id" id="id" value="">
                     <div class="mb-3 row">
